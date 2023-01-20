@@ -21,7 +21,7 @@
         },
         "android": {
             "adaptiveIcon": {
-                "foregroundImage": "./assets/adaptive-icon.png",
+                // "foregroundImage": "", not sure what this is
                 "backgroundColor": "#FFFFFF"
             },
             "package": "com.ozdv.icatholic"
