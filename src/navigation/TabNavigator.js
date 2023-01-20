@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { HomeScreen, BibleScreen, ExamenScreen, PrayScreen } from "../screens";
 import Icon from "../../assets/icons";
+import colors from "../../assets/colors";
 
 export default function TabNavigator() {
     const Tab = createBottomTabNavigator();
@@ -12,8 +13,8 @@ export default function TabNavigator() {
         <Tab.Navigator
             initialRouteName="HomeStack"
             screenOptions={{
-                tabBarActiveTintColor: "#4eb6ef",
-                tabBarInactiveTintColor: "#6a7798",
+                tabBarActiveTintColor: colors.blue400,
+                tabBarInactiveTintColor: colors.neutral50,
                 tabBarLabelStyle: styles.label,
             }}
         >
