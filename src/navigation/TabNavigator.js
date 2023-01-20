@@ -16,6 +16,7 @@ export default function TabNavigator() {
                 tabBarActiveTintColor: colors.blue400,
                 tabBarInactiveTintColor: colors.neutral50,
                 tabBarLabelStyle: styles.label,
+                // headerShown: false,
             }}
         >
             <Tab.Screen

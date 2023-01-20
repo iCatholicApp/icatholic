@@ -3,14 +3,14 @@ import { SafeAreaView, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 
-import TabNavigator from "./TabNavigator";
+import DrawerNavigator from "./DrawerNavigator";
 
 export default function AppNavigator() {
     return (
         <SafeAreaView style={styles.container}>
             <NavigationContainer>
                 <StatusBar style="auto" />
-                <TabNavigator />
+                <DrawerNavigator />
             </NavigationContainer>
         </SafeAreaView>
     );
