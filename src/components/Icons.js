@@ -47,12 +47,12 @@ const getIconFont = (type) => {
         // case "octicon":
         //     return OcticonIcon;
         default:
-            return FAIcon;
+            return FAIcon5;
     }
 };
 
 const Icon = ({ type, ...props }) => {
-    props = props.size ? props : { ...props, size: 24 };
+    props = props.size ? props : { ...props, size: 22 };
     const FontIcon = getIconFont(type);
     return <FontIcon {...props} />;
 };

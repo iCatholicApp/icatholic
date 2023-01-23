@@ -1,17 +1,19 @@
-import HomeScreen from "./HomeScreen";
 import BibleScreen from "./BibleScreen";
+import ExamenScreen from "./ExamenScreen";
+import HomeScreen from "./HomeScreen";
 // import MassScreen from "./MassScreen";
 // import MoreScreen from "./MoreScreen";
 // import PrayerListScreen from "./PrayerListScreen";
 import PrayScreen from "./PrayScreen";
-import ExamenScreen from "./ExamenScreen";
+import ProfileScreen from "./ProfileScreen";
 
 export {
-    HomeScreen,
     BibleScreen,
+    ExamenScreen,
+    HomeScreen,
     // MassScreen,
     // MoreScreen,
     // PrayerListScreen,
     PrayScreen,
-    ExamenScreen,
+    ProfileScreen,
 };

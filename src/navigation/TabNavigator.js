@@ -2,9 +2,15 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { HomeScreen, BibleScreen, ExamenScreen, PrayScreen } from "../screens";
-import Icon from "../../assets/icons";
-import colors from "../../assets/colors";
+import { Icon } from "../components";
+import colors from "../theme/colors";
+import {
+    HomeScreen,
+    BibleScreen,
+    ExamenScreen,
+    PrayScreen,
+    ProfileScreen,
+} from "../screens";
 
 export default function TabNavigator() {
     const Tab = createBottomTabNavigator();
@@ -43,13 +49,7 @@ export default function TabNavigator() {
                 component={PrayScreen}
                 options={{
                     tabBarIcon: ({ color }) => {
-                        return (
-                            <Icon
-                                type="fa5"
-                                name="praying-hands"
-                                color={color}
-                            />
-                        );
+                        return <Icon name="praying-hands" color={color} />;
                     },
                 }}
             />
@@ -59,6 +59,15 @@ export default function TabNavigator() {
                 options={{
                     tabBarIcon: ({ color }) => {
                         return <Icon type="fa5" name="dove" color={color} />;
+                    },
+                }}
+            />
+            <Tab.Screen
+                name="Profile"
+                component={ProfileScreen}
+                options={{
+                    tabBarIcon: ({ color }) => {
+                        return <Icon type="ion" name="person" color={color} />;
                     },
                 }}
             />
