@@ -12,8 +12,8 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         backgroundColor: colors.neutral95,
         padding: 15,
-        // gap: 10,
     },
 });
