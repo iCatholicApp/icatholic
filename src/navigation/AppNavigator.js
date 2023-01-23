@@ -1,24 +1,23 @@
-import React from "react";
-import { SafeAreaView, StyleSheet } from "react-native";
+import React, { Fragment } from "react";
+import { SafeAreaView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 
+import colors from "../theme/colors";
 import TabNavigator from "./TabNavigator";
 
 export default function AppNavigator() {
     return (
-        <SafeAreaView style={styles.container}>
-            <NavigationContainer>
-                <StatusBar style="auto" />
-                <TabNavigator />
-            </NavigationContainer>
-        </SafeAreaView>
+        <Fragment>
+            <SafeAreaView
+                style={{ flex: 0, backgroundColor: colors.neutral95 }}
+            />
+            <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
+                <NavigationContainer>
+                    <StatusBar style="auto" />
+                    <TabNavigator />
+                </NavigationContainer>
+            </SafeAreaView>
+        </Fragment>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#fff", // color of status bar
-    },
-});

@@ -11,6 +11,7 @@ import {
     PrayScreen,
     ProfileScreen,
 } from "../screens";
+import ExamenNavigator from "./ExamenNavigator";
 
 export default function TabNavigator() {
     const Tab = createBottomTabNavigator();
@@ -22,7 +23,7 @@ export default function TabNavigator() {
                 tabBarActiveTintColor: colors.blue400,
                 tabBarInactiveTintColor: colors.neutral50,
                 tabBarLabelStyle: styles.label,
-                // headerShown: false,
+                headerShown: false,
             }}
         >
             <Tab.Screen
@@ -55,7 +56,7 @@ export default function TabNavigator() {
             />
             <Tab.Screen
                 name="Examen"
-                component={ExamenScreen}
+                component={ExamenNavigator}
                 options={{
                     tabBarIcon: ({ color }) => {
                         return <Icon type="fa5" name="dove" color={color} />;

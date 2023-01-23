@@ -8,14 +8,14 @@ export default function TextArea(props) {
     return (
         <View style={[style, styles.container]}>
             {title && <Text style={[titleStyle, styles.title]}>{title}</Text>}
-            <Text style={[styles.text, textStyle]}>{text}</Text>
+            {text && <Text style={[styles.text, textStyle]}>{text}</Text>}
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: "center",
+        // justifyContent: "center",
         alignContent: "center",
         borderRadius: 10,
         padding: 15,
@@ -23,7 +23,11 @@ const styles = StyleSheet.create({
     },
     text: {
         alignSelf: "center",
-        fontSize: 16,
-        // color: colors.neutral20,
+        fontSize: 14,
+    },
+    title: {
+        alignSelf: "center",
+        fontSize: 20,
+        fontWeight: "bold",
     },
 });
