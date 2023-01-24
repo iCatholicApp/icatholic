@@ -1,4 +1,5 @@
 import BibleScreen from "./BibleScreen";
+import DailyExamenScreen from "./DailyExamenScreen";
 import ExamenScreen from "./ExamenScreen";
 import ExamenQuestionScreen from "./ExamenQuestionScreen";
 import HomeScreen from "./HomeScreen";
@@ -10,6 +11,7 @@ import ProfileScreen from "./ProfileScreen";
 
 export {
     BibleScreen,
+    DailyExamenScreen,
     ExamenScreen,
     ExamenQuestionScreen,
     HomeScreen,

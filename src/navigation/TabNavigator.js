@@ -4,13 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { Icon } from "../components";
 import colors from "../theme/colors";
-import {
-    HomeScreen,
-    BibleScreen,
-    ExamenScreen,
-    PrayScreen,
-    ProfileScreen,
-} from "../screens";
+import { HomeScreen, BibleScreen, PrayScreen, ProfileScreen } from "../screens";
 import ExamenNavigator from "./ExamenNavigator";
 
 export default function TabNavigator() {

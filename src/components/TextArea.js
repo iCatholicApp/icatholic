@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-// import colors from "../theme/colors";
+import colors from "../theme/colors";
 
 export default function TextArea(props) {
     const { text, style, textStyle, title, titleStyle } = props;
@@ -15,11 +15,10 @@ export default function TextArea(props) {
 
 const styles = StyleSheet.create({
     container: {
-        // justifyContent: "center",
         alignContent: "center",
         borderRadius: 10,
         padding: 15,
-        backgroundColor: "white",
+        backgroundColor: colors.white,
     },
     text: {
         alignSelf: "center",

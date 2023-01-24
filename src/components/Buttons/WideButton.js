@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-// import colors from "../../theme/colors";
+import colors from "../../theme/colors";
 import Icon from "../Icons";
 
 export default function WideButton(props) {
@@ -20,7 +20,7 @@ export default function WideButton(props) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "white",
+        backgroundColor: colors.white,
         alignItems: "center",
         flexDirection: "row",
         borderRadius: 10,

@@ -9,30 +9,42 @@ export default function ExamenScreen() {
 
     return (
         <ScrollView style={styles.container}>
-            {/* <View style={styles.child}>
+            <View style={styles.child}>
                 <TextArea
-                    title="Examination of Conscience"
-                    // text="Whether you're ending your day, or preparing yourself to recieve the sacrament of Penance,
-                    // you should thoroughly examen your conscience through prayerfully reflecting on your thoughts, words, and deeds."
+                    textStyle={styles.text}
+                    text="Whether you're ending your day, or preparing yourself to recieve the sacrament of Penance,
+                    you should thoroughly examen your conscience through prayerfully reflecting on your thoughts, words, and deeds."
                 />
-            </View> */}
+            </View>
             <View style={styles.child}>
                 <WideButton
                     text="Daily Examen"
+                    onPress={() => navigation.navigate("Daily Examination")}
+                />
+            </View>
+            <View style={styles.child}>
+                <WideButton
+                    text="Examen for Anyone"
                     onPress={() => navigation.navigate("Examination")}
                 />
             </View>
             <View style={styles.child}>
-                <WideButton text="Examen for Anyone" />
+                <WideButton
+                    text="Examen for Children"
+                    onPress={() => navigation.navigate("Examination")}
+                />
             </View>
             <View style={styles.child}>
-                <WideButton text="Examen for Children" />
+                <WideButton
+                    text="Examen for Young Adults"
+                    onPress={() => navigation.navigate("Examination")}
+                />
             </View>
             <View style={styles.child}>
-                <WideButton text="Examen for Young Adults" />
-            </View>
-            <View style={styles.child}>
-                <WideButton text="Examen for Married" />
+                <WideButton
+                    text="Examen for Married"
+                    onPress={() => navigation.navigate("Examination")}
+                />
             </View>
         </ScrollView>
     );
@@ -40,12 +52,14 @@ export default function ExamenScreen() {
 
 const styles = StyleSheet.create({
     container: {
-        // marginTop: 100,
         flex: 1,
         backgroundColor: colors.neutral95,
         padding: 15,
         flexDirection: "column",
         paddingVertical: 7.5,
+    },
+    text: {
+        // fontSize: 14,
     },
     child: {
         paddingVertical: 7.5,

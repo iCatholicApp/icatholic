@@ -11,18 +11,20 @@ export default function Header({ props }) {
     const title = getHeaderTitle(options, route.name);
 
     return (
-        <View style={styles.container}>
-            {back && (
-                <IconButton
-                    type="ion"
-                    name="chevron-back"
-                    size={26}
-                    iconStyle={styles.backButton}
-                    onPress={() => navigation.navigate("Examen Page")}
-                />
-            )}
-            <Text style={styles.title}>{title}</Text>
-            <View></View>
+        <View style={styles.header}>
+            <View style={styles.container}>
+                {back && (
+                    <IconButton
+                        type="ion"
+                        name="chevron-back"
+                        size={26}
+                        iconStyle={styles.backButton}
+                        onPress={navigation.goBack}
+                    />
+                )}
+                <Text style={styles.title}>{title}</Text>
+                <View></View>
+            </View>
         </View>
     );
 }
@@ -45,5 +47,8 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: "bold",
         // marginLeft: -26,
+    },
+    header: {
+        backgroundColor: colors.neutral95,
     },
 });
