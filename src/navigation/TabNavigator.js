@@ -61,6 +61,7 @@ export default function TabNavigator() {
                     tabBarIcon: ({ color }) => {
                         return <Icon type="fa5" name="dove" color={color} />;
                     },
+                    headerShown: false,
                 }}
             />
             <Tab.Screen

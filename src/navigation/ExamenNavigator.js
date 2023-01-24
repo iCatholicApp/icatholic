@@ -1,6 +1,9 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ExamenScreen, ExamenQuestionScreen } from "../screens";
+import { Header, IconButton } from "../components";
+import { View, Text } from "react-native";
+import { getHeaderTitle } from "@react-navigation/elements";
 
 export default function ExamenNavigator() {
     const ExamenStack = createNativeStackNavigator();
@@ -8,10 +11,14 @@ export default function ExamenNavigator() {
     return (
         <ExamenStack.Navigator
             screenOptions={{
-                headerShown: false,
+                header: (props) => <Header props={props} />,
             }}
         >
-            <ExamenStack.Screen name="Examen Page" component={ExamenScreen} />
+            <ExamenStack.Screen
+                name="Examen Page"
+                component={ExamenScreen}
+                options={{}}
+            />
             <ExamenStack.Screen
                 name="Examination"
                 component={ExamenQuestionScreen}

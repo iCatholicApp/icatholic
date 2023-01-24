@@ -6,19 +6,19 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function ExamenScreen() {
     const navigation = useNavigation();
-    console.log("navigation", navigation);
+
     return (
         <ScrollView style={styles.container}>
-            <View style={styles.child}>
+            {/* <View style={styles.child}>
                 <TextArea
                     title="Examination of Conscience"
                     // text="Whether you're ending your day, or preparing yourself to recieve the sacrament of Penance,
                     // you should thoroughly examen your conscience through prayerfully reflecting on your thoughts, words, and deeds."
                 />
-            </View>
+            </View> */}
             <View style={styles.child}>
                 <WideButton
-                    text="Daily Examination of Conscience"
+                    text="Daily Examen"
                     onPress={() => navigation.navigate("Examination")}
                 />
             </View>
@@ -40,6 +40,7 @@ export default function ExamenScreen() {
 
 const styles = StyleSheet.create({
     container: {
+        // marginTop: 100,
         flex: 1,
         backgroundColor: colors.neutral95,
         padding: 15,

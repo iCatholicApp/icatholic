@@ -9,18 +9,6 @@ export default function ExamenQuestionScreen() {
 
     return (
         <ScrollView style={styles.container}>
-            <View style={styles.child}>
-                <Card style={styles.card}>
-                    <IconButton
-                        type="ion"
-                        name="chevron-back"
-                        size={26}
-                        iconStyle={styles.backButton}
-                        onPress={() => navigation.navigate("Examen Page")}
-                    />
-                    <Text style={styles.title}>Examination of Conscience</Text>
-                </Card>
-            </View>
             <Card style={styles.body}>
                 <TextArea text="text" />
                 <TextArea text="text" />
