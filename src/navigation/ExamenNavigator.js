@@ -21,7 +21,7 @@ export default function ExamenNavigator() {
                 component={ExamenScreen}
             />
             <ExamenStack.Screen
-                name="Daily Examination"
+                name="Daily Examen"
                 component={DailyExamenScreen}
             />
             <ExamenStack.Screen

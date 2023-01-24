@@ -19,7 +19,7 @@ export default function ExamenScreen() {
             <View style={styles.child}>
                 <WideButton
                     text="Daily Examen"
-                    onPress={() => navigation.navigate("Daily Examination")}
+                    onPress={() => navigation.navigate("Daily Examen")}
                 />
             </View>
             <View style={styles.child}>

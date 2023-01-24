@@ -23,7 +23,17 @@ export default function Header({ props }) {
                     />
                 )}
                 <Text style={styles.title}>{title}</Text>
-                <View></View>
+                <View>
+                    {/* {true && (
+                        <IconButton
+                            // type="ion"
+                            name="info-circle"
+                            size={16}
+                            iconStyle={styles.infoButton}
+                            onPress={() => {}}
+                        />
+                    )} */}
+                </View>
             </View>
         </View>
     );
@@ -32,6 +42,7 @@ export default function Header({ props }) {
 const styles = StyleSheet.create({
     container: {
         width: screenWidth - 30,
+        height: 60,
         borderRadius: 10,
         padding: 15,
         marginTop: 15,
@@ -40,11 +51,14 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
     },
+    backButton: {
+        zIndex: 1,
+    },
     title: {
         flex: 1,
         textAlign: "center",
         flexDirection: "column",
-        fontSize: 20,
+        fontSize: 24,
         fontWeight: "bold",
         // marginLeft: -26,
     },
