@@ -25,27 +25,29 @@ export default function ExamenScreen() {
             <View style={styles.child}>
                 <WideButton
                     text="Examen for Anyone"
-                    onPress={() => navigation.navigate("Examination")}
+                    onPress={() => navigation.navigate("Examen for Anyone")}
                 />
             </View>
-            <View style={styles.child}>
+            {/* <View style={styles.child}>
                 <WideButton
                     text="Examen for Children"
-                    onPress={() => navigation.navigate("Examination")}
+                    onPress={() => navigation.navigate("Examen for Children")}
                 />
             </View>
             <View style={styles.child}>
                 <WideButton
                     text="Examen for Young Adults"
-                    onPress={() => navigation.navigate("Examination")}
+                    onPress={() =>
+                        navigation.navigate("Examen for Young Adults")
+                    }
                 />
             </View>
             <View style={styles.child}>
                 <WideButton
                     text="Examen for Married"
-                    onPress={() => navigation.navigate("Examination")}
+                    onPress={() => navigation.navigate("Examen for Married")}
                 />
-            </View>
+            </View> */}
         </ScrollView>
     );
 }

@@ -1,29 +1,44 @@
 import React from "react";
 import { StyleSheet, ScrollView, View, Text } from "react-native";
 import colors from "../theme/colors";
-import { Card, Icon, IconButton, TextArea, WideButton } from "../components";
-import { useNavigation } from "@react-navigation/native";
+import { Card } from "../components";
+import { examination, precepts } from "../constants/examination";
 
-export default function ExamenQuestionScreen() {
-    const navigation = useNavigation();
-
+export default function ExamenQuestionScreen({ route, navigation }) {
     return (
         <ScrollView style={styles.container}>
-            <Card style={styles.body}>
-                <TextArea text="text" />
-                <TextArea text="text" />
-                <TextArea text="text" />
-                <TextArea text="text" />
-                <TextArea text="text" />
-                <TextArea text="text" />
-                <TextArea text="text" />
-                <TextArea text="text" />
-                <TextArea text="text" />
-                <TextArea text="text" />
-                <TextArea text="text" />
-                <TextArea text="text" />
-                <TextArea text="text" />
-            </Card>
+            {examination.map((commandment, index) => (
+                <Card style={styles.card} key={commandment.commandment}>
+                    <Text style={styles.header}>{commandment.commandment}</Text>
+                    <Text style={styles.text}>{"\n"}Have I...</Text>
+                    {commandment.questions.map((question) => (
+                        <Text style={styles.text} key={question}>
+                            {"\n"}
+                            {question}
+                        </Text>
+                    ))}
+                </Card>
+            ))}
+            {precepts.map((precept, index) => (
+                <Card
+                    style={[
+                        styles.card,
+                        precepts.length === index + 1
+                            ? { marginBottom: 30 }
+                            : { marginBottom: 15 },
+                    ]}
+                    key={precept.name}
+                >
+                    <Text style={styles.header}>{precept.name}</Text>
+
+                    {precept.questions.map((question) => (
+                        <Text style={styles.text} key={question}>
+                            {"\n"}
+                            {question}
+                        </Text>
+                    ))}
+                </Card>
+            ))}
         </ScrollView>
     );
 }
@@ -33,21 +48,14 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: colors.neutral95,
         padding: 15,
-        columnGap: 5,
-        // paddingVertical: gap,
     },
     card: {
-        alignItems: "center",
-        flexDirection: "row",
+        marginBottom: 15,
     },
-    body: {},
-    title: {
-        flex: 1,
-        textAlign: "center",
-        fontSize: 18,
+    text: {
+        fontSize: 14,
     },
-
-    child: {
-        paddingVertical: 15,
+    header: {
+        fontWeight: "bold",
     },
 });

@@ -25,9 +25,21 @@ export default function ExamenNavigator() {
                 component={DailyExamenScreen}
             />
             <ExamenStack.Screen
-                name="Examination"
+                name="Examen for Anyone"
                 component={ExamenQuestionScreen}
             />
+            {/* <ExamenStack.Screen
+                name="Examen for Children"
+                component={ExamenQuestionScreen}
+            />
+            <ExamenStack.Screen
+                name="Examen for Young Adults"
+                component={ExamenQuestionScreen}
+            />
+            <ExamenStack.Screen
+                name="Examen for Married"
+                component={ExamenQuestionScreen}
+            /> */}
         </ExamenStack.Navigator>
     );
 }
