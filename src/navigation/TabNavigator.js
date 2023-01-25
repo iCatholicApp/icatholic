@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { Icon } from "../components";
+import { Header, Icon } from "../components";
 import colors from "../theme/colors";
 import { HomeScreen, BibleScreen, PrayScreen, ProfileScreen } from "../screens";
 import ExamenNavigator from "./ExamenNavigator";
@@ -17,7 +17,8 @@ export default function TabNavigator() {
                 tabBarActiveTintColor: colors.blue400,
                 tabBarInactiveTintColor: colors.neutral50,
                 tabBarLabelStyle: styles.label,
-                headerShown: false,
+                // headerShown: false,
+                header: (props) => <Header props={props} />,
             }}
         >
             <Tab.Screen
@@ -34,6 +35,7 @@ export default function TabNavigator() {
                 name="Bible"
                 component={BibleScreen}
                 options={{
+                    headerShown: false,
                     tabBarIcon: ({ color }) => {
                         return <Icon type="fa5" name="bible" color={color} />;
                     },
