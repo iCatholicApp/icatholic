@@ -18,11 +18,12 @@ export default function RoundButton(props) {
 
 const styles = StyleSheet.create({
     container: {
-        width: 100,
+        // width: 100,
         borderRadius: 100,
         justifyContent: "space-between",
         backgroundColor: colors.blue400,
-        padding: 10,
+        paddingVertical: 10,
+        paddingHorizontal: 15,
     },
     buttonText: {
         alignSelf: "center",
