@@ -9,55 +9,63 @@ import {
 } from "react-native";
 import RenderHtml from "react-native-render-html";
 
-import { RoundButton } from "../components";
+import { DropDown, RoundButton } from "../components";
 import colors from "../theme/colors";
 import { getBooks, getChapters, getPassages } from "../helper/bible";
 
 export default function BibleScreen() {
     const { width } = useWindowDimensions();
 
-    const [loading, setLoading] = useState(true);
-    const [currentPassage, setCurrentPassage] = useState([]);
-    const [currentBook, setCurrentBook] = useState({
-        id: "MAT",
-        name: "Matthew",
-    });
+    const [currentPassage, setCurrentPassage] = useState("<p></p>");
+    const [currentBook, setCurrentBook] = useState("MAT");
     const [currentChapter, setCurrentChapter] = useState(1);
     const [allChapters, setAllChapters] = useState([]);
     const [allBooks, setAllBooks] = useState([]);
 
     useEffect(() => {
         getBooks().then(function (response) {
-            setAllBooks(response.data.data);
+            const books = response.data.data.map((book) => ({
+                label: book.name,
+                value: book.id,
+            }));
+            setAllBooks(books);
         });
-        getChapters(currentBook.id).then(function (response) {
-            setAllChapters(response.data.data);
+        getChapters(currentBook).then(function (response) {
+            const chapters = response.data.data.map((chapters) => ({
+                label: chapters.number,
+                value: chapters.number,
+            }));
+            setAllChapters(chapters.slice(1));
         });
         getPassages(currentBook, currentChapter).then(function (response) {
             setCurrentPassage(response.data.data.content);
-            setLoading(false);
         });
     }, [currentBook, currentChapter]);
 
     return (
         <View style={styles.container}>
             <View style={styles.bibleHeader}>
-                <RoundButton
-                    text="Matthew"
-                    buttonStyle={styles.buttonStyle}
-                    onPress={() => {}}
+                <DropDown
+                    width="43%"
+                    options={allBooks}
+                    placeholder="Matthew"
+                    onPress={(book) => setCurrentBook(book)}
+                    searchable
                 />
-                <RoundButton
-                    text="1"
-                    buttonStyle={styles.buttonStyle}
-                    onPress={() => {}}
+                <DropDown
+                    width="25%"
+                    options={allChapters}
+                    placeholder="1"
+                    onPress={(chapter) => setCurrentChapter(chapter)}
                 />
             </View>
             <ScrollView style={styles.passage}>
-                <RenderHtml
-                    contentWidth={width}
-                    source={{ html: currentPassage || "" }}
-                />
+                {currentPassage && (
+                    <RenderHtml
+                        contentWidth={width}
+                        source={{ html: currentPassage }}
+                    />
+                )}
             </ScrollView>
         </View>
     );
@@ -69,7 +77,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.neutral95,
     },
     buttonStyle: {
-        marginRight: 10,
+        marginRight: 15,
     },
     passage: {
         padding: 15,
@@ -78,5 +86,11 @@ const styles = StyleSheet.create({
     bibleHeader: {
         padding: 15,
         flexDirection: "row",
+        zIndex: 1,
+    },
+    bookModal: {
+        position: "absolute",
+        margin: 15,
+        backgroundColor: "blue",
     },
 });

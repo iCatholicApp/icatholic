@@ -9,5 +9,7 @@ export function getChapters(book) {
 }
 
 export function getPassages(book, chapter) {
-    return axiosClient.get(`/passages/${book.id}.${chapter}`);
+    book = book === null ? "MAT" : book;
+    chapter = chapter === null ? 1 : chapter;
+    return axiosClient.get(`/passages/${book}.${chapter}`);
 }
