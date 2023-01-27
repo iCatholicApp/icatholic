@@ -4,8 +4,14 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { Header, Icon } from "../components";
 import colors from "../theme/colors";
-import { HomeScreen, BibleScreen, PrayScreen, ProfileScreen } from "../screens";
+import {
+    HomeScreen,
+    BibleScreen,
+    PrayerListScreen,
+    ProfileScreen,
+} from "../screens";
 import ExamenNavigator from "./ExamenNavigator";
+import PrayerNavigator from "./PrayerNavigator";
 
 export default function TabNavigator() {
     const Tab = createBottomTabNavigator();
@@ -17,7 +23,6 @@ export default function TabNavigator() {
                 tabBarActiveTintColor: colors.blue400,
                 tabBarInactiveTintColor: colors.neutral50,
                 tabBarLabelStyle: styles.label,
-                // headerShown: false,
                 header: (props) => <Header props={props} />,
             }}
         >
@@ -43,11 +48,12 @@ export default function TabNavigator() {
             />
             <Tab.Screen
                 name="Prayers"
-                component={PrayScreen}
+                component={PrayerNavigator}
                 options={{
                     tabBarIcon: ({ color }) => {
                         return <Icon name="praying-hands" color={color} />;
                     },
+                    headerShown: false,
                 }}
             />
             <Tab.Screen

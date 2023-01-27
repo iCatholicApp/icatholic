@@ -5,8 +5,8 @@ import ExamenQuestionScreen from "./ExamenQuestionScreen";
 import HomeScreen from "./HomeScreen";
 // import MassScreen from "./MassScreen";
 // import MoreScreen from "./MoreScreen";
-// import PrayerListScreen from "./PrayerListScreen";
-import PrayScreen from "./PrayScreen";
+import PrayerScreen from "./PrayerScreen";
+import PrayerListScreen from "./PrayerListScreen";
 import ProfileScreen from "./ProfileScreen";
 
 export {
@@ -17,7 +17,7 @@ export {
     HomeScreen,
     // MassScreen,
     // MoreScreen,
-    // PrayerListScreen,
-    PrayScreen,
+    PrayerScreen,
+    PrayerListScreen,
     ProfileScreen,
 };

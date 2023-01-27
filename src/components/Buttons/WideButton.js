@@ -4,7 +4,7 @@ import colors from "../../theme/colors";
 import Icon from "../Icons";
 
 export default function WideButton(props) {
-    const { buttonStyle, text, textStyle, onPress } = props;
+    const { text, buttonStyle, textStyle, onPress } = props;
 
     return (
         <TouchableOpacity
