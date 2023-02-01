@@ -1,7 +1,8 @@
 // https://scripture.api.bible/livedocs
 import axios from "axios";
+import Constants from "expo-constants";
 
-const API_KEY = "d9eed5d51ed9a38e8bddb22eb95fd65b";
+const API_KEY = Constants.expoConfig.extra.bible_api_key;
 
 const axiosClient = axios.create({
     baseURL: `https://api.scripture.api.bible/v1/bibles/06125adad2d5898a-01`,
