@@ -4,28 +4,29 @@ import {
   CreateNotificationScreen,
   NotificationScreen,
   MoreScreen,
+  EditNotificationScreen,
 } from "../screens";
 import { Header } from "../components";
 
 export default function MoreNavigator() {
-  const PrayerStack = createNativeStackNavigator();
+  const MoreStack = createNativeStackNavigator();
 
   return (
-    <PrayerStack.Navigator
+    <MoreStack.Navigator
       screenOptions={{
         header: (props) => <Header props={props} />,
       }}
     >
-      <PrayerStack.Screen
-        name="Options"
-        component={MoreScreen}
-        options={{ headerShown: false }}
-      />
-      <PrayerStack.Screen name="Notifications" component={NotificationScreen} />
-      <PrayerStack.Screen
+      {/* <MoreStack.Screen name="More" component={MoreScreen} /> */}
+      <MoreStack.Screen name="Notifications" component={NotificationScreen} />
+      <MoreStack.Screen
         name="Create Notification"
         component={CreateNotificationScreen}
       />
-    </PrayerStack.Navigator>
+      <MoreStack.Screen
+        name="Edit Notification"
+        component={EditNotificationScreen}
+      />
+    </MoreStack.Navigator>
   );
 }

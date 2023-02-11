@@ -4,12 +4,12 @@ import { StyleSheet, ScrollView, Text, View } from "react-native";
 import { Button, Card } from "../components";
 import colors from "../theme/colors";
 
-export default function CreateNotificationScreen() {
+export default function EditNotificationScreen() {
   const navigation = useNavigation();
   return (
     <ScrollView style={styles.container}>
       <Card>
-        <Text>Create Notification</Text>
+        <Text>Edit Notification screen </Text>
         <View style={styles.footerStyles}>
           <Button
             text="Cancel"

@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { Header, Icon } from "../components";
 import colors from "../theme/colors";
-import { HomeScreen, BibleScreen } from "../screens";
+import { HomeScreen, BibleScreen, NotificationScreen } from "../screens";
 import ExamenNavigator from "./ExamenNavigator";
 import PrayerNavigator from "./PrayerNavigator";
 import MoreNavigator from "./MoreNavigator";
@@ -63,6 +63,23 @@ export default function TabNavigator() {
         }}
       />
       <Tab.Screen
+        name="Alerts"
+        component={MoreNavigator}
+        options={{
+          tabBarIcon: ({ color }) => {
+            return (
+              <Icon
+                type="ion"
+                size={28}
+                name="ios-notifications"
+                color={color}
+              />
+            );
+          },
+          headerShown: false,
+        }}
+      />
+      {/* <Tab.Screen
         name="More"
         component={MoreNavigator}
         options={{
@@ -71,7 +88,7 @@ export default function TabNavigator() {
           },
           headerShown: false,
         }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 }
