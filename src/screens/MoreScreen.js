@@ -10,7 +10,7 @@ export default function MoreScreen() {
   return (
     <ScrollView style={styles.container}>
       <WideButton
-        text="Notifications"
+        text="Reminders"
         onPress={() => navigation.navigate("Notifications")}
       />
     </ScrollView>

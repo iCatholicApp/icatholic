@@ -18,13 +18,13 @@ export default function MoreNavigator() {
       }}
     >
       {/* <MoreStack.Screen name="More" component={MoreScreen} /> */}
-      <MoreStack.Screen name="Notifications" component={NotificationScreen} />
+      <MoreStack.Screen name="Reminders" component={NotificationScreen} />
       <MoreStack.Screen
-        name="Create Notification"
+        name="Create Reminder"
         component={CreateNotificationScreen}
       />
       <MoreStack.Screen
-        name="Edit Notification"
+        name="Edit Reminder"
         component={EditNotificationScreen}
       />
     </MoreStack.Navigator>

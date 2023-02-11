@@ -21,8 +21,9 @@ export default function NotificationScreen() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       {notifications.length > 0 &&
-        notifications.map((notification) => (
+        notifications.map((notification, i) => (
           <WideButton
+            key={`${notification.prayer}-${i}`}
             buttonStyle={{ width: "100%" }}
             body={
               <View style={styles.buttonBodyStyle}>
@@ -39,7 +40,7 @@ export default function NotificationScreen() {
               </View>
             }
             bodyStyle={styles.buttonBodyStyle1}
-            onPress={() => navigation.navigate("Edit Notification")}
+            onPress={() => navigation.navigate("Edit Reminder")}
           />
         ))}
       <IconButton
@@ -49,9 +50,9 @@ export default function NotificationScreen() {
         color={colors.neutral30}
         iconStyle={styles.createButtonIconStyle}
         labelStyles={styles.buttonLabelStyles}
-        label="Add notification"
+        label="Add Reminder"
         buttonStyle={styles.createButtonStyle}
-        onPress={() => navigation.navigate("Create Notification")}
+        onPress={() => navigation.navigate("Create Reminder")}
       />
     </ScrollView>
   );

@@ -63,9 +63,10 @@ export default function TabNavigator() {
         }}
       />
       <Tab.Screen
-        name="Alerts"
+        name="Reminders1"
         component={MoreNavigator}
         options={{
+          title: "Reminders",
           tabBarIcon: ({ color }) => {
             return (
               <Icon

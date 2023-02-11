@@ -9,14 +9,14 @@ export default function CreateNotificationScreen() {
   return (
     <ScrollView style={styles.container}>
       <Card>
-        <Text>Create Notification</Text>
+        <Text>Create Reminder</Text>
         <View style={styles.footerStyles}>
           <Button
             text="Cancel"
             type="secondary"
             onPress={() => navigation.navigate("Notifications")}
           />
-          <Button text="Save" onPress={() => handleCreate()} />
+          <Button text="Create" onPress={() => handleCreate()} />
         </View>
       </Card>
     </ScrollView>
