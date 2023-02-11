@@ -4,30 +4,15 @@ import { useNavigation } from "@react-navigation/native";
 import { WideButton } from "../components";
 import colors from "../theme/colors";
 
-export default function NotificationScreen() {
+export default function MoreScreen() {
   const navigation = useNavigation();
 
-  const notifications = [
-    {
-      frequency: "",
-      prayer: "",
-      enabled: true,
-    },
-  ];
-
-  console.log("notifications:", notifications.length);
-
-  return notifications.length > 0 ? (
+  return (
     <ScrollView style={styles.container}>
-      <Text>has notifications</Text>
       <WideButton
         text="Notifications"
-        onPress={() => navigation.navigate("Create Notification")}
+        onPress={() => navigation.navigate("Notifications")}
       />
-    </ScrollView>
-  ) : (
-    <ScrollView style={styles.container}>
-      <Text>no notifications </Text>
     </ScrollView>
   );
 }
