@@ -35,9 +35,6 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   secondaryContainer: {
-    // width: 100,
-    // backgroundColor: colors.blue400,
-    // borderRadius: 10,
     justifyContent: "space-between",
     paddingVertical: 10,
   },

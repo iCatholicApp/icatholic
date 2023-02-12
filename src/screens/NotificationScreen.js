@@ -1,18 +1,18 @@
 import React from "react";
 import { StyleSheet, ScrollView, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { Icon, IconButton, WideButton } from "../components";
+import { Card, Icon, IconButton, WideButton } from "../components";
 import colors from "../theme/colors";
 
 export default function NotificationScreen() {
   const navigation = useNavigation();
 
   const notifications = [
-    {
-      frequency: "Daily 9:00am",
-      prayer: "Examen",
-      enabled: true,
-    },
+    // {
+    //   frequency: "Daily 9:00am",
+    //   prayer: "Examen",
+    //   enabled: true,
+    // },
   ];
   // todo: change button to '+ add notification'
 
@@ -43,6 +43,13 @@ export default function NotificationScreen() {
             onPress={() => navigation.navigate("Edit Reminder")}
           />
         ))}
+      {notifications.length === 0 && (
+        <Card style={{ width: "100%" }}>
+          <Text>
+            Here you can create daily reminders to build a better prayer life
+          </Text>
+        </Card>
+      )}
       <IconButton
         type="ion"
         name="add-sharp"
