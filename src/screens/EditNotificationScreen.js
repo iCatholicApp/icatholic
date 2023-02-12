@@ -6,6 +6,7 @@ import colors from "../theme/colors";
 
 export default function EditNotificationScreen() {
   const navigation = useNavigation();
+
   return (
     <ScrollView style={styles.container}>
       <Card>

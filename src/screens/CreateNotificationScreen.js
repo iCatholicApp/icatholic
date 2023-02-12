@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
-import { StyleSheet, ScrollView, Text, View } from "react-native";
-import { Button, Card, DropDown, SelectInput } from "../components";
+import { StyleSheet, Text, View } from "react-native";
+import { Button, Card, SelectInput } from "../components";
 import prayers from "../constants/prayers";
 import { frequency, Time } from "../constants/reminders";
 import colors from "../theme/colors";
@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: "20",
     marginTop: 4,
-    // alignSelf: "center",
   },
   footerStyles: {
     flexDirection: "row",

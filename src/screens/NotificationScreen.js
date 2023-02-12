@@ -4,17 +4,17 @@ import { useNavigation } from "@react-navigation/native";
 import { Card, Icon, IconButton, WideButton } from "../components";
 import colors from "../theme/colors";
 
+// todo: change button to '+ add notification'
 export default function NotificationScreen() {
   const navigation = useNavigation();
 
   const notifications = [
-    // {
-    //   frequency: "Daily 9:00am",
-    //   prayer: "Examen",
-    //   enabled: true,
-    // },
+    {
+      frequency: "Daily 9:00am",
+      prayer: "Examen",
+      enabled: true,
+    },
   ];
-  // todo: change button to '+ add notification'
 
   console.log("notifications:", notifications.length);
 
@@ -91,7 +91,6 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginTop: 15,
     backgroundColor: colors.white,
-    // height: 50,
     padding: 15,
     width: 170,
     borderRadius: 25,
