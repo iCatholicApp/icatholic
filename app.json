@@ -1,38 +1,39 @@
 {
-    "expo": {
-        "name": "iCatholic",
-        "slug": "iCatholic",
-        "version": "1.0.0",
-        "orientation": "portrait",
-        "icon": "./assets/icon.png",
-        "userInterfaceStyle": "light",
-        "splash": {
-            "image": "./assets/splash.png",
-            "resizeMode": "contain",
-            "backgroundColor": "#fff"
-        },
-        "updates": {
-            "fallbackToCacheTimeout": 0
-        },
-        "assetBundlePatterns": ["**/*"],
-        "ios": {
-            "supportsTablet": true,
-            "bundleIdentifier": "com.ozdv.icatholic"
-        },
-        "android": {
-            "adaptiveIcon": {
-                // "foregroundImage": "", not sure what this is
-                "backgroundColor": "#FFFFFF"
-            },
-            "package": "com.ozdv.icatholic"
-        },
-        "web": {
-            "favicon": "./assets/favicon.png"
-        },
-        "extra": {
-            "eas": {
-                "projectId": "cd3338fb-6026-4600-9ea8-01843915d22c"
-            }
-        }
+  "expo": {
+    "name": "iCatholic",
+    "slug": "iCatholic",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#fff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ozdv.icatholic",
+      "buildNumber": "3"
+    },
+    "android": {
+      "adaptiveIcon": {
+        // "foregroundImage": "", not sure what this is
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.ozdv.icatholic"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "cd3338fb-6026-4600-9ea8-01843915d22c"
+      }
     }
+  }
 }
