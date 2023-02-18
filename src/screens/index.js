@@ -1,26 +1,26 @@
 import BibleScreen from "./BibleScreen";
-import CreateNotificationScreen from "./CreateNotificationScreen";
+import CreateReminderScreen from "./reminders/CreateReminderScreen";
 import DailyExamenScreen from "./DailyExamenScreen";
-import EditNotificationScreen from "./EditNotificationScreen";
+import EditReminderScreen from "./reminders/EditReminderScreen";
 import ExamenScreen from "./ExamenScreen";
 import ExamenQuestionScreen from "./ExamenQuestionScreen";
 import HomeScreen from "./HomeScreen";
 import MoreScreen from "./MoreScreen";
-import NotificationScreen from "./NotificationScreen";
+import ReminderScreen from "./reminders/ReminderScreen";
 import PrayerScreen from "./PrayerScreen";
 import PrayerListScreen from "./PrayerListScreen";
 import ProfileScreen from "./ProfileScreen";
 
 export {
   BibleScreen,
-  CreateNotificationScreen,
+  CreateReminderScreen,
   DailyExamenScreen,
-  EditNotificationScreen,
+  EditReminderScreen,
   ExamenScreen,
   ExamenQuestionScreen,
   HomeScreen,
   MoreScreen,
-  NotificationScreen,
+  ReminderScreen,
   PrayerScreen,
   PrayerListScreen,
   ProfileScreen,

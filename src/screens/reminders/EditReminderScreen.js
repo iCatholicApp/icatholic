@@ -1,21 +1,23 @@
-import { useNavigation } from "@react-navigation/native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, ScrollView, Text, View } from "react-native";
-import { Button, Card } from "../components";
-import colors from "../theme/colors";
+import { Button, Card } from "../../components";
+import colors from "../../theme/colors";
 
-export default function EditNotificationScreen() {
+export default function EditReminderScreen() {
   const navigation = useNavigation();
+
+  const handleCreate = () => {};
 
   return (
     <ScrollView style={styles.container}>
       <Card>
-        <Text>Edit Notification screen </Text>
+        <Text>Edit Reminder screen </Text>
         <View style={styles.footerStyles}>
           <Button
             text="Cancel"
             type="secondary"
-            onPress={() => navigation.navigate("Notifications")}
+            onPress={() => navigation.navigate("Reminders")}
           />
           <Button text="Save" onPress={() => handleCreate()} />
         </View>

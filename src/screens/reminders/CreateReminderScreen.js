@@ -1,12 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Button, Card, SelectInput } from "../components";
-import prayers from "../constants/prayers";
-import { frequency, Time } from "../constants/reminders";
-import colors from "../theme/colors";
+import { Button, Card, SelectInput } from "../../components";
+import prayers from "../../constants/prayers";
+import { frequency, Time } from "../../constants/reminders";
+import colors from "../../theme/colors";
 
-export default function CreateNotificationScreen() {
+export default function CreateReminderScreen() {
   const navigation = useNavigation();
 
   const [freq, setFreq] = useState();
@@ -62,7 +62,7 @@ export default function CreateNotificationScreen() {
             text="Cancel"
             type="secondary"
             textStyle={{ fontWeight: "bold" }}
-            onPress={() => navigation.navigate("Notifications")}
+            onPress={() => navigation.navigate("Reminders")}
           />
           <Button
             textStyle={{ fontWeight: "bold" }}

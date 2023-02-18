@@ -1,10 +1,10 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
-  CreateNotificationScreen,
-  NotificationScreen,
+  CreateReminderScreen,
+  ReminderScreen,
   MoreScreen,
-  EditNotificationScreen,
+  EditReminderScreen,
 } from "../screens";
 import { Header } from "../components";
 
@@ -17,16 +17,13 @@ export default function MoreNavigator() {
         header: (props) => <Header props={props} />,
       }}
     >
-      {/* <MoreStack.Screen name="More" component={MoreScreen} /> */}
-      <MoreStack.Screen name="Reminders" component={NotificationScreen} />
+      <MoreStack.Screen name="Other Features" component={MoreScreen} />
+      <MoreStack.Screen name="Reminders" component={ReminderScreen} />
       <MoreStack.Screen
         name="Create Reminder"
-        component={CreateNotificationScreen}
+        component={CreateReminderScreen}
       />
-      <MoreStack.Screen
-        name="Edit Reminder"
-        component={EditNotificationScreen}
-      />
+      <MoreStack.Screen name="Edit Reminder" component={EditReminderScreen} />
     </MoreStack.Navigator>
   );
 }

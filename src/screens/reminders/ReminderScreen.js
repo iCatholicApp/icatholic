@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet, ScrollView, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { Card, Icon, IconButton, WideButton } from "../components";
-import colors from "../theme/colors";
+import { Card, Icon, IconButton, WideButton } from "../../components";
+import colors from "../../theme/colors";
 
 // todo: change button to '+ add notification'
-export default function NotificationScreen() {
+export default function ReminderScreen() {
   const navigation = useNavigation();
 
   const notifications = [
