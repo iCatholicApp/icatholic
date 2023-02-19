@@ -17,21 +17,28 @@ export default function WideButton(props) {
       activeOpacity={0.6}
       disabled={disabled}
     >
-      <View style={[bodyStyle, styles.bodyStyle]}>{body}</View>
-      <Text
-        style={[
-          textStyle,
-          disabled ? styles.disabledButtonText : styles.buttonText,
-        ]}
-      >
-        {text}
-      </Text>
-      <Icon
-        type="ion"
-        name="chevron-forward"
-        size={20}
-        color={disabled ? colors.neutral80 : colors.neutral20}
-      />
+      <View style={[bodyStyle, styles.bodyStyle]}>
+        {body}
+        {text && (
+          <Text
+            numberOfLines={1}
+            style={[
+              textStyle,
+              disabled ? styles.disabledButtonText : styles.buttonText,
+            ]}
+          >
+            {text}
+          </Text>
+        )}
+      </View>
+      <View style={styles.containerIcon}>
+        <Icon
+          type="ion"
+          name="chevron-forward"
+          size={20}
+          color={disabled ? colors.neutral80 : colors.neutral20}
+        />
+      </View>
     </TouchableOpacity>
   );
 }
@@ -45,8 +52,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     padding: 15,
     minHeight: 50,
-    opacity: "50%",
   },
+  containerIcon: {},
   disabledContainer: {
     backgroundColor: colors.neutral90,
     alignItems: "center",
@@ -55,7 +62,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     padding: 15,
     minHeight: 50,
-    opacity: "50%",
   },
   disabledButtonText: {
     fontSize: 16,
@@ -63,8 +69,10 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 16,
-    // color: colors.neutral30,
-    // fontWeight: "700",
+    color: colors.neutral20,
+    fontWeight: "600",
   },
-  bodyStyle: {},
+  bodyStyle: {
+    maxWidth: "85%",
+  },
 });

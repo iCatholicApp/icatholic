@@ -1,30 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, ScrollView, Text, View } from "react-native";
+import * as Notifications from "expo-notifications";
 import { useNavigation } from "@react-navigation/native";
 import { Card, Icon, IconButton, WideButton } from "../../components";
 import colors from "../../theme/colors";
 
 // todo: change button to '+ add notification'
+// todo for delete, make list rerender; maybe have popup?
 export default function ReminderScreen() {
   const navigation = useNavigation();
+  const [reminders, setReminders] = useState([]);
 
-  const notifications = [
-    {
-      frequency: "Daily 9:00am",
-      prayer: "Examen",
-      enabled: true,
-    },
-  ];
-
-  console.log("notifications:", notifications.length);
+  useEffect(() => {
+    Notifications.getAllScheduledNotificationsAsync()
+      .then((notificationPromises) => {
+        const notificationList = notificationPromises.map((e) => ({
+          id: e.identifier,
+          title: e.content.title,
+          body: e.content.body,
+          // data: e.content.data,
+          frequency: e.trigger,
+        }));
+        return notificationList;
+      })
+      .then((idk) => setReminders(idk))
+      .catch((error) => console.log("error with notify!", "\n", error));
+  }, [reminders]);
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {notifications.length > 0 &&
-        notifications.map((notification, i) => (
+      {reminders.length > 0 &&
+        reminders.map((reminder, i) => (
           <WideButton
-            key={`${notification.prayer}-${i}`}
-            buttonStyle={{ width: "100%" }}
+            key={`${reminder.prayer}-${i}`}
+            buttonStyle={{ width: "100%", marginBottom: 15 }}
             body={
               <View style={styles.buttonBodyStyle}>
                 <Icon
@@ -34,16 +43,16 @@ export default function ReminderScreen() {
                   size={20}
                   color={colors.neutral30}
                 />
-                <Text style={styles.labelStyles}>
-                  {notification.prayer} - {notification.frequency}
+                <Text numberOfLines={1} style={styles.labelStyles}>
+                  {reminder.title} - {reminder.body}
                 </Text>
               </View>
             }
             bodyStyle={styles.buttonBodyStyle1}
-            onPress={() => navigation.navigate("Edit Reminder")}
+            onPress={() => navigation.navigate("Edit Reminder", { reminder })}
           />
         ))}
-      {notifications.length === 0 && (
+      {reminders.length === 0 && (
         <Card style={{ width: "100%" }}>
           <Text>
             Here you can create daily reminders to build a better prayer life
@@ -54,7 +63,7 @@ export default function ReminderScreen() {
         type="ion"
         name="add-sharp"
         // size={25}
-        color={colors.neutral30}
+        color={colors.neutral20}
         iconStyle={styles.createButtonIconStyle}
         labelStyles={styles.buttonLabelStyles}
         label="Add Reminder"
@@ -74,16 +83,20 @@ const styles = StyleSheet.create({
   },
   buttonBodyStyle: {
     flex: 1,
+    width: "100%",
     flexDirection: "row",
     alignItems: "center",
   },
   labelStyles: {
     fontSize: 16,
-    color: colors.neutral30,
+    color: colors.neutral20,
+    fontWeight: "600",
   },
   buttonLabelStyles: {
-    color: colors.neutral30,
+    color: colors.neutral20,
     fontSize: 16,
+    fontWeight: "600",
+    marginLeft: 5,
   },
   createButtonStyle: {
     alignItems: "center",

@@ -34,6 +34,14 @@
       "eas": {
         "projectId": "cd3338fb-6026-4600-9ea8-01843915d22c"
       }
-    }
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "sounds": ["./assets/mixkit-positive-notification-951.wav"]
+        }
+      ]
+    ]
   }
 }

@@ -15,11 +15,12 @@ import colors from "../../theme/colors";
 // todo replace input in bible with this
 
 export default function SelectInput(props) {
-  const { options, onPress, placeholder, style, maxHeight, searchable } = props;
+  const { options, onPress, placeholder, style, maxHeight, searchable, value } =
+    props;
 
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState({});
-  const [selectedLabel, setSelectedLabel] = useState("");
+  const [selected, setSelected] = useState(value || {});
+  const [selectedLabel, setSelectedLabel] = useState(value?.label || "");
   const [height, setHeight] = useState(200);
   const [filteredOptions, setFilteredOptions] = useState([]);
 

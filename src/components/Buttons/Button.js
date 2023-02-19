@@ -8,8 +8,8 @@ export default function Button(props) {
   return (
     <TouchableOpacity
       style={[
-        buttonStyle,
         type === "secondary" ? styles.secondaryContainer : styles.container,
+        buttonStyle,
       ]}
       onPress={onPress}
       activeOpacity={0.6}
@@ -28,11 +28,12 @@ export default function Button(props) {
 
 const styles = StyleSheet.create({
   container: {
-    width: 100,
+    // width: 100,
     backgroundColor: colors.blue400,
     borderRadius: 10,
     justifyContent: "space-between",
-    padding: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
   },
   secondaryContainer: {
     justifyContent: "space-between",
@@ -42,10 +43,12 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     color: colors.white,
     fontSize: 14,
+    fontWeight: "700",
   },
   secondaryButtonText: {
     alignSelf: "center",
     color: colors.neutral30,
     fontSize: 14,
+    fontWeight: "700",
   },
 });

@@ -5,6 +5,7 @@ import { Button, Card, SelectInput } from "../../components";
 import prayers from "../../constants/prayers";
 import { frequency, Time } from "../../constants/reminders";
 import colors from "../../theme/colors";
+import * as Notifications from "expo-notifications";
 
 export default function CreateReminderScreen() {
   const navigation = useNavigation();
@@ -15,17 +16,35 @@ export default function CreateReminderScreen() {
 
   const prayerList = [...prayers, { label: "Examen", value: "examen" }];
 
-  const handleCreate = () => {
+  const handleCreate = async () => {
     if (
       Object.values(freq).length &&
       Object.values(time).length &&
       Object.values(prayer).length
     ) {
       console.log("created!", Object.values(freq).length);
+      await schedulePushNotification();
     } else {
       console.log("not filled out");
     }
   };
+
+  async function schedulePushNotification() {
+    await Notifications.scheduleNotificationAsync({
+      content: {
+        title: `${prayer.label}`,
+        body: `${freq.label} at ${time.label}`,
+        // data: { data: "goes here" },
+        sound: "mixkit-positive-notification-951.wav",
+      },
+      trigger: {
+        hour: 7,
+        minute: 45,
+        repeats: true,
+      },
+    });
+    navigation.navigate("Reminders");
+  }
 
   return (
     <View style={styles.container}>
