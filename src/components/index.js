@@ -1,7 +1,7 @@
 import Button from "./Buttons/Button";
 import Card from "./Card";
 import DropDown from "./DropDown.js";
-import DateTimePicker from "./Input/DateTimePicker";
+import TimeInput from "./Input/TimeInput";
 import Header from "./Header";
 import RoundButton from "./Buttons/RoundButton";
 import SelectInput from "./Input/SelectInput";
@@ -14,7 +14,7 @@ export {
   Button,
   Card,
   DropDown,
-  DateTimePicker,
+  TimeInput,
   Header,
   RoundButton,
   SelectInput,

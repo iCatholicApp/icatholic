@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Button, Card, SelectInput } from "../../components";
+import { Button, Card, SelectInput, TimeInput } from "../../components";
 import prayers from "../../constants/prayers";
 import { frequency, Time } from "../../constants/reminders";
 import colors from "../../theme/colors";
@@ -11,7 +11,7 @@ export default function CreateReminderScreen() {
   const navigation = useNavigation();
 
   const [freq, setFreq] = useState();
-  const [time, setTime] = useState();
+  const [time, setTime] = useState(new Date(1598051730000));
   const [prayer, setPrayer] = useState();
 
   const prayerList = [...prayers, { label: "Examen", value: "examen" }];
@@ -38,13 +38,16 @@ export default function CreateReminderScreen() {
         sound: "mixkit-positive-notification-951.wav",
       },
       trigger: {
-        hour: 7,
-        minute: 45,
+        hour: time.getHours(),
+        minute: time.getMinutes(),
         repeats: true,
       },
     });
     navigation.navigate("Reminders");
   }
+
+  console.log("time", time);
+  console.log("time.getUTCHours", time.getMinutes());
 
   return (
     <View style={styles.container}>
@@ -60,10 +63,9 @@ export default function CreateReminderScreen() {
           </View>
           <View style={styles.body}>
             <Text style={styles.text}>Time</Text>
-            <SelectInput
-              options={Time}
-              placeholder="Select when to pray"
-              onPress={(selected) => setTime(selected)}
+            <TimeInput
+              value={time}
+              onChange={(e, selected) => setTime(selected)}
             />
           </View>
           <View style={styles.body}>
