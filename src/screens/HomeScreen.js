@@ -36,8 +36,10 @@ export default function HomeScreen() {
             Good {timeString} User!
           </Text>
         </View>
-        <View style={{ marginTop: 15 }}>
-          <Text style={{ fontSize: 18 }}>Today's Feast:</Text>
+        <View style={{ marginTop: 25 }}>
+          <Text style={{ fontSize: 18, textAlign: "center" }}>
+            Today's Feast
+          </Text>
           <View
             style={{
               marginTop: 10,

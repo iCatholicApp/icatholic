@@ -5,30 +5,30 @@ import { TextArea, WideButton } from "../components";
 import { useNavigation } from "@react-navigation/native";
 
 export default function ExamenScreen() {
-    const navigation = useNavigation();
+  const navigation = useNavigation();
 
-    return (
-        <ScrollView style={styles.container}>
-            <View style={styles.child}>
-                <TextArea
-                    textStyle={styles.text}
-                    text="Whether you're ending your day, or preparing yourself to recieve the sacrament of Penance,
+  return (
+    <ScrollView style={styles.container}>
+      <View style={styles.child}>
+        <TextArea
+          textStyle={styles.text}
+          text="Whether you're ending your day, or preparing yourself to recieve the sacrament of Penance,
                     you should thoroughly examen your conscience through prayerfully reflecting on your thoughts, words, and deeds."
-                />
-            </View>
-            <View style={styles.child}>
-                <WideButton
-                    text="Daily Examen"
-                    onPress={() => navigation.navigate("Daily Examen")}
-                />
-            </View>
-            <View style={styles.child}>
-                <WideButton
-                    text="Examen for Anyone"
-                    onPress={() => navigation.navigate("Examen for Anyone")}
-                />
-            </View>
-            {/* <View style={styles.child}>
+        />
+      </View>
+      <View style={styles.child}>
+        <WideButton
+          text="Daily Examen"
+          onPress={() => navigation.navigate("Daily Examen")}
+        />
+      </View>
+      <View style={styles.child}>
+        <WideButton
+          text="Examen for Anyone"
+          onPress={() => navigation.navigate("Examen for Anyone")}
+        />
+      </View>
+      {/* <View style={styles.child}>
                 <WideButton
                     text="Examen for Children"
                     onPress={() => navigation.navigate("Examen for Children")}
@@ -48,22 +48,23 @@ export default function ExamenScreen() {
                     onPress={() => navigation.navigate("Examen for Married")}
                 />
             </View> */}
-        </ScrollView>
-    );
+    </ScrollView>
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: colors.neutral95,
-        padding: 15,
-        flexDirection: "column",
-        paddingVertical: 7.5,
-    },
-    text: {
-        // fontSize: 14,
-    },
-    child: {
-        paddingVertical: 7.5,
-    },
+  container: {
+    flex: 1,
+    backgroundColor: colors.neutral95,
+    padding: 15,
+    flexDirection: "column",
+    paddingVertical: 7.5,
+  },
+  text: {
+    // fontSize: 14,
+    fontSize: 18,
+  },
+  child: {
+    paddingVertical: 7.5,
+  },
 });

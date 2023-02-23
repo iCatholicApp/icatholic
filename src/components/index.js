@@ -1,3 +1,4 @@
+import Accordian from "./Accordian";
 import Button from "./Buttons/Button";
 import Card from "./Card";
 import DropDown from "./DropDown.js";
@@ -11,6 +12,7 @@ import IconButton from "./Buttons/IconButton";
 import TextArea from "./TextArea";
 
 export {
+  Accordian,
   Button,
   Card,
   DropDown,
