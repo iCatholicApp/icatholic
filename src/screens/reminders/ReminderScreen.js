@@ -5,8 +5,6 @@ import { useNavigation } from "@react-navigation/native";
 import { Card, Icon, IconButton, WideButton } from "../../components";
 import colors from "../../theme/colors";
 
-// todo: change button to '+ add notification'
-// todo for delete, make list rerender; maybe have popup?
 export default function ReminderScreen() {
   const navigation = useNavigation();
   const [reminders, setReminders] = useState([]);
@@ -53,8 +51,8 @@ export default function ReminderScreen() {
           />
         ))}
       {reminders.length === 0 && (
-        <Card style={{ width: "100%" }}>
-          <Text>
+        <Card style={{ width: "100%", marginBottom: 15 }}>
+          <Text style={{ fontSize: 18 }}>
             Create daily or weekly reminders to pray or do an examen to help
             build a better prayer life.
           </Text>
@@ -63,7 +61,7 @@ export default function ReminderScreen() {
       <IconButton
         type="ion"
         name="add-sharp"
-        // size={25}
+        size={24}
         color={colors.blue400}
         iconStyle={styles.createButtonIconStyle}
         labelStyles={styles.buttonLabelStyles}
@@ -89,13 +87,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   labelStyles: {
-    fontSize: 16,
-    // color: colors.blue400,
+    fontSize: 20,
+    color: colors.neutral30,
     fontWeight: "600",
   },
   buttonLabelStyles: {
     color: colors.blue400,
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: "600",
     marginLeft: 5,
   },
@@ -103,10 +101,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     alignSelf: "center",
-    marginTop: 15,
     backgroundColor: colors.white,
     padding: 15,
-    width: 170,
+    paddingHorizontal: 25,
     borderRadius: 25,
   },
 });

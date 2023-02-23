@@ -9,18 +9,13 @@ export default function TimeInput(props) {
   const { onChange, value } = props;
   const [showPicker, setShowPicker] = useState(false);
 
-  console.log(
-    "value",
-    value.toLocaleTimeString("en-ca", { hour: "numeric", minute: "numeric" })
-  );
-
   return (
     <View style={styles.container}>
       <TouchableOpacity
         onPress={() => setShowPicker(!showPicker)}
         style={styles.button}
       >
-        <Text>
+        <Text style={{ fontSize: 16, color: colors.neutral30 }}>
           {value.toLocaleTimeString("en-ca", {
             hour: "numeric",
             minute: "numeric",

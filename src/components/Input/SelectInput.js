@@ -139,5 +139,8 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     overflow: "hidden",
   },
-  inputText: {},
+  inputText: {
+    fontSize: 16,
+    color: colors.neutral30,
+  },
 });

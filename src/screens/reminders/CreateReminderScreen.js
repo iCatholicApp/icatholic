@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Button, Card, SelectInput, TimeInput } from "../../components";
 import prayers from "../../constants/prayers";
-import { frequency, Time } from "../../constants/reminders";
 import colors from "../../theme/colors";
 import * as Notifications from "expo-notifications";
 
@@ -44,9 +43,6 @@ export default function CreateReminderScreen() {
     navigation.navigate("Reminders");
   }
 
-  console.log("time", time);
-  // console.log("time.getUTCHours", time.toLocaleTimeString());
-
   return (
     <View style={styles.container}>
       <Card>
@@ -80,7 +76,7 @@ export default function CreateReminderScreen() {
           <Button
             text="Cancel"
             type="secondary"
-            textStyle={{ fontWeight: "bold" }}
+            textStyle={{ fontWeight: "bold", fontSize: "18" }}
             onPress={() => navigation.navigate("Reminders")}
           />
           <Button
@@ -112,7 +108,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
   text: {
-    fontSize: "20",
+    fontSize: 20,
+    fontWeight: "bold",
+    color: colors.neutral50,
   },
   footerStyles: {
     flexDirection: "row",

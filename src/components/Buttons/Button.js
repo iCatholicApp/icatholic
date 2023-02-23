@@ -42,13 +42,13 @@ const styles = StyleSheet.create({
   buttonText: {
     alignSelf: "center",
     color: colors.white,
-    fontSize: 14,
+    fontSize: 18,
     fontWeight: "700",
   },
   secondaryButtonText: {
     alignSelf: "center",
     color: colors.neutral30,
-    fontSize: 14,
+    fontSize: 18,
     fontWeight: "700",
   },
 });

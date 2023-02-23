@@ -35,7 +35,7 @@ export default function WideButton(props) {
         <Icon
           type="ion"
           name="chevron-forward"
-          size={20}
+          size={24}
           color={disabled ? colors.neutral80 : colors.neutral20}
         />
       </View>
@@ -68,9 +68,9 @@ const styles = StyleSheet.create({
     color: colors.neutral70,
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: 20,
     color: colors.neutral20,
-    fontWeight: "600",
+    fontWeight: "bold",
   },
   bodyStyle: {
     maxWidth: "85%",

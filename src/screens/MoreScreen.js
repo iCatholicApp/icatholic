@@ -12,6 +12,7 @@ export default function MoreScreen() {
       <WideButton
         buttonStyle={{ marginBottom: 15 }}
         text="Settings"
+        disabled={true}
         onPress={() => navigation.navigate("Settings")}
       />
       <WideButton
