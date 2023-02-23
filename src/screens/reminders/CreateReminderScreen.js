@@ -10,19 +10,14 @@ import * as Notifications from "expo-notifications";
 export default function CreateReminderScreen() {
   const navigation = useNavigation();
 
-  const [freq, setFreq] = useState();
-  const [time, setTime] = useState(new Date(1598051730000));
+  const [time, setTime] = useState(new Date());
   const [prayer, setPrayer] = useState();
 
   const prayerList = [...prayers, { label: "Examen", value: "examen" }];
 
   const handleCreate = async () => {
-    if (
-      Object.values(freq).length &&
-      Object.values(time).length &&
-      Object.values(prayer).length
-    ) {
-      console.log("created!", Object.values(freq).length);
+    console.log("time", time);
+    if (Object.values(prayer).length) {
       await schedulePushNotification();
     } else {
       console.log("not filled out");
@@ -32,8 +27,11 @@ export default function CreateReminderScreen() {
   async function schedulePushNotification() {
     await Notifications.scheduleNotificationAsync({
       content: {
-        title: `${prayer.label}`,
-        body: `${freq.label} at ${time.label}`,
+        title: `Your daily reminder to pray!`,
+        body: `${prayer.label} at ${time.toLocaleTimeString("en-ca", {
+          hour: "numeric",
+          minute: "numeric",
+        })}`,
         // data: { data: "goes here" },
         sound: "mixkit-positive-notification-951.wav",
       },
@@ -47,20 +45,20 @@ export default function CreateReminderScreen() {
   }
 
   console.log("time", time);
-  console.log("time.getUTCHours", time.getMinutes());
+  // console.log("time.getUTCHours", time.toLocaleTimeString());
 
   return (
     <View style={styles.container}>
       <Card>
         <View style={styles.header}>
-          <View style={styles.body}>
+          {/* <View style={styles.body}>
             <Text style={styles.text}>Frequency</Text>
             <SelectInput
               options={frequency}
               placeholder="Select how often to pray"
               onPress={(selected) => setFreq(selected)}
             />
-          </View>
+          </View> */}
           <View style={styles.body}>
             <Text style={styles.text}>Time</Text>
             <TimeInput
@@ -68,7 +66,7 @@ export default function CreateReminderScreen() {
               onChange={(e, selected) => setTime(selected)}
             />
           </View>
-          <View style={styles.body}>
+          <View style={[styles.body, { paddingTop: 10 }]}>
             <Text style={styles.text}>Prayer</Text>
             <SelectInput
               options={prayerList}
@@ -108,14 +106,13 @@ const styles = StyleSheet.create({
   body: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
     paddingBottom: 10,
-    paddingTop: 10,
     borderBottomColor: colors.neutral80,
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
   text: {
     fontSize: "20",
-    marginTop: 4,
   },
   footerStyles: {
     flexDirection: "row",

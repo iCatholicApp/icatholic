@@ -44,7 +44,7 @@ export default function ReminderScreen() {
                   color={colors.neutral30}
                 />
                 <Text numberOfLines={1} style={styles.labelStyles}>
-                  {reminder.title} - {reminder.body}
+                  {reminder.body}
                 </Text>
               </View>
             }
@@ -55,7 +55,8 @@ export default function ReminderScreen() {
       {reminders.length === 0 && (
         <Card style={{ width: "100%" }}>
           <Text>
-            Here you can create daily reminders to build a better prayer life
+            Create daily or weekly reminders to pray or do an examen to help
+            build a better prayer life.
           </Text>
         </Card>
       )}
@@ -63,7 +64,7 @@ export default function ReminderScreen() {
         type="ion"
         name="add-sharp"
         // size={25}
-        color={colors.neutral20}
+        color={colors.blue400}
         iconStyle={styles.createButtonIconStyle}
         labelStyles={styles.buttonLabelStyles}
         label="Add Reminder"
@@ -89,11 +90,11 @@ const styles = StyleSheet.create({
   },
   labelStyles: {
     fontSize: 16,
-    color: colors.neutral20,
+    // color: colors.blue400,
     fontWeight: "600",
   },
   buttonLabelStyles: {
-    color: colors.neutral20,
+    color: colors.blue400,
     fontSize: 16,
     fontWeight: "600",
     marginLeft: 5,

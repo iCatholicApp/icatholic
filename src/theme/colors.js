@@ -1,5 +1,6 @@
 export default {
   white: "#FFF",
+  black: "#000",
   neutral98: "#f9f9fc",
   neutral95: "#eff0f6",
   neutral90: "#dfe2ee",
