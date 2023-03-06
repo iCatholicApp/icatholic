@@ -1,3 +1,4 @@
+import AboutScreen from "./AboutScreen";
 import BibleScreen from "./BibleScreen";
 import CreateReminderScreen from "./reminders/CreateReminderScreen";
 import DailyExamenScreen from "./DailyExamenScreen";
@@ -12,6 +13,7 @@ import PrayerListScreen from "./PrayerListScreen";
 import ProfileScreen from "./ProfileScreen";
 
 export {
+  AboutScreen,
   BibleScreen,
   CreateReminderScreen,
   DailyExamenScreen,

@@ -15,7 +15,6 @@ export default function CreateReminderScreen() {
   const prayerList = [...prayers, { label: "Examen", value: "examen" }];
 
   const handleCreate = async () => {
-    console.log("time", time);
     if (Object.values(prayer).length) {
       await schedulePushNotification();
     } else {
@@ -47,14 +46,6 @@ export default function CreateReminderScreen() {
     <View style={styles.container}>
       <Card>
         <View style={styles.header}>
-          {/* <View style={styles.body}>
-            <Text style={styles.text}>Frequency</Text>
-            <SelectInput
-              options={frequency}
-              placeholder="Select how often to pray"
-              onPress={(selected) => setFreq(selected)}
-            />
-          </View> */}
           <View style={styles.body}>
             <Text style={styles.text}>Time</Text>
             <TimeInput

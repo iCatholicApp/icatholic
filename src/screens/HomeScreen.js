@@ -14,7 +14,7 @@ export default function HomeScreen() {
 
   const currentHour = currentDateTime.getHours();
   const timeString =
-    currentHour > 12 ? (currentHour > 18 ? "evening" : "afternoon") : "morning";
+    currentHour > 12 ? (currentHour > 18 ? "Evening" : "Afternoon") : "Morning";
 
   const [churchCalendar, setChurchCalendar] = useState({});
   const romcal = new Romcal({
@@ -33,7 +33,7 @@ export default function HomeScreen() {
       <Card>
         <View>
           <Text style={{ textAlign: "center", fontSize: 20 }}>
-            Good {timeString} User!
+            Good {timeString} Friend!
           </Text>
         </View>
         <View style={{ marginTop: 25 }}>

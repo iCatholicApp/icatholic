@@ -47,8 +47,7 @@ export default function MoreScreen() {
       <WideButton
         buttonStyle={{ marginBottom: 15 }}
         text="About"
-        onPress={() => navigation.navigate("")}
-        disabled={true}
+        onPress={() => navigation.navigate("About")}
       />
     </ScrollView>
   );
