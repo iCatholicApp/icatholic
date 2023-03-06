@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import { SafeAreaView } from "react-native";
+import * as Linking from "expo-linking";
 import * as Device from "expo-device";
 import * as Notifications from "expo-notifications";
 import { NavigationContainer } from "@react-navigation/native";
@@ -8,11 +9,27 @@ import { StatusBar } from "expo-status-bar";
 import colors from "../theme/colors";
 import TabNavigator from "./TabNavigator";
 
+const prefix = Linking.createURL("/");
+
 export default function AppNavigator() {
   const [expoPushToken, setExpoPushToken] = useState("");
   const [notification, setNotification] = useState(false);
   const notificationListener = useRef();
   const responseListener = useRef();
+
+  const linking = {
+    prefixes: [prefix],
+    config: {
+      screens: {
+        Prayers: {
+          screens: {
+            Prayer: "prayer",
+          },
+        },
+        Examen: "examen",
+      },
+    },
+  };
 
   useEffect(() => {
     registerForPushNotificationsAsync().then((token) =>
@@ -40,7 +57,7 @@ export default function AppNavigator() {
     <Fragment>
       <SafeAreaView style={{ flex: 0, backgroundColor: colors.neutral95 }} />
       <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
-        <NavigationContainer>
+        <NavigationContainer linking={linking}>
           <StatusBar style="auto" />
           <TabNavigator />
         </NavigationContainer>
