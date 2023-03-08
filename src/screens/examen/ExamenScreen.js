@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, ScrollView, View } from "react-native";
-import colors from "../theme/colors";
-import { TextArea, WideButton } from "../components";
+import colors from "../../theme/colors";
+import { TextArea, WideButton } from "../../components";
 import { useNavigation } from "@react-navigation/native";
 
 export default function ExamenScreen() {

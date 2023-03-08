@@ -1,9 +1,14 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
-import { SafeAreaView } from "react-native";
+
+import { useColorScheme, SafeAreaView } from "react-native";
 import * as Linking from "expo-linking";
 import * as Device from "expo-device";
 import * as Notifications from "expo-notifications";
-import { NavigationContainer } from "@react-navigation/native";
+import {
+  DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
+} from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 
 import colors from "../theme/colors";
@@ -12,6 +17,20 @@ import TabNavigator from "./TabNavigator";
 const prefix = Linking.createURL("/");
 
 export default function AppNavigator() {
+  const scheme = useColorScheme();
+
+  const MyTheme = {
+    dark: false,
+    colors: {
+      primary: "rgb(255, 45, 85)",
+      background: "rgb(242, 242, 242)",
+      card: "rgb(255, 255, 255)",
+      text: "rgb(28, 28, 30)",
+      border: "rgb(199, 199, 204)",
+      notification: "rgb(255, 69, 58)",
+    },
+  };
+
   const [expoPushToken, setExpoPushToken] = useState("");
   const [notification, setNotification] = useState(false);
   const notificationListener = useRef();
@@ -57,7 +76,10 @@ export default function AppNavigator() {
     <Fragment>
       <SafeAreaView style={{ flex: 0, backgroundColor: colors.neutral95 }} />
       <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
-        <NavigationContainer linking={linking}>
+        <NavigationContainer
+          linking={linking}
+          theme={scheme === "dark" ? DarkTheme : DefaultTheme}
+        >
           <StatusBar style="auto" />
           <TabNavigator />
         </NavigationContainer>
@@ -93,7 +115,7 @@ async function registerForPushNotificationsAsync() {
     token = (await Notifications.getExpoPushTokenAsync()).data;
     console.log(token);
   } else {
-    alert("Must use physical device for Push Notifications");
+    // alert("Must use physical device for Push Notifications");
   }
 
   return token;

@@ -1,16 +1,25 @@
-import AboutScreen from "./AboutScreen";
+// Main
 import BibleScreen from "./BibleScreen";
-import CreateReminderScreen from "./reminders/CreateReminderScreen";
-import DailyExamenScreen from "./DailyExamenScreen";
-import EditReminderScreen from "./reminders/EditReminderScreen";
-import ExamenScreen from "./ExamenScreen";
-import ExamenQuestionScreen from "./ExamenQuestionScreen";
 import HomeScreen from "./HomeScreen";
-import MoreScreen from "./MoreScreen";
+
+// More
+import AboutScreen from "./more/AboutScreen";
+import MoreScreen from "./more/MoreScreen";
+import ProfileScreen from "./more/ProfileScreen";
+
+// Reminders
+import CreateReminderScreen from "./reminders/CreateReminderScreen";
+import EditReminderScreen from "./reminders/EditReminderScreen";
 import ReminderScreen from "./reminders/ReminderScreen";
-import PrayerScreen from "./PrayerScreen";
-import PrayerListScreen from "./PrayerListScreen";
-import ProfileScreen from "./ProfileScreen";
+
+// Examen
+import DailyExamenScreen from "./examen/DailyExamenScreen";
+import ExamenScreen from "./examen/ExamenScreen";
+import ExamenQuestionScreen from "./examen/ExamenQuestionScreen";
+
+// Prayer
+import PrayerScreen from "./prayers/PrayerScreen";
+import PrayerListScreen from "./prayers/PrayerListScreen";
 
 export {
   AboutScreen,

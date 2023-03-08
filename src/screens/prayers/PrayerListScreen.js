@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { StyleSheet, ScrollView, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { WideButton } from "../components";
-import colors from "../theme/colors";
-import prayers from "../constants/prayers";
+import { WideButton } from "../../components";
+import colors from "../../theme/colors";
+import prayers from "../../constants/prayers";
 
 export default function PrayerListScreen() {
   const navigation = useNavigation();

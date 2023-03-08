@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, ScrollView, Text } from "react-native";
-import { Card } from "../components";
-import colors from "../theme/colors";
+import { Card } from "../../components";
+import colors from "../../theme/colors";
 
 // Examen description taken from here
 // https://www.ignatianspirituality.com/examen-prayer-card/

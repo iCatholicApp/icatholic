@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, ScrollView, View, Text } from "react-native";
+import { useTheme } from "@react-navigation/native";
+
 import Romcal from "romcal";
 import { Canada_En } from "@romcal/calendar.canada";
 import colors from "../theme/colors";
 import { Card } from "../components";
 
 export default function HomeScreen() {
+  const { colors } = useTheme();
+
+  console.log("colors", colors);
   const currentDateTime = new Date();
   const dateTimeStringForChurchCalendar = `${currentDateTime.getFullYear()}-${(
     "0" +

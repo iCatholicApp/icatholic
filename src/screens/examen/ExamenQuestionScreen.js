@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, ScrollView, View, Text } from "react-native";
-import colors from "../theme/colors";
-import { Accordian, Card } from "../components";
-import { examination, precepts } from "../constants/examination";
+import colors from "../../theme/colors";
+import { Accordian, Card } from "../../components";
+import { examination, precepts } from "../../constants/examination";
 
 export default function ExamenQuestionScreen({ route, navigation }) {
   return (
