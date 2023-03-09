@@ -1,6 +1,7 @@
 // Main
 import BibleScreen from "./BibleScreen";
 import HomeScreen from "./HomeScreen";
+import MassScreen from "./MassScreen";
 
 // More
 import AboutScreen from "./more/AboutScreen";
@@ -30,6 +31,7 @@ export {
   ExamenScreen,
   ExamenQuestionScreen,
   HomeScreen,
+  MassScreen,
   MoreScreen,
   ReminderScreen,
   PrayerScreen,

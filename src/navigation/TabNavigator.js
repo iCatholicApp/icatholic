@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { Header, Icon } from "../components";
 import colors from "../theme/colors";
-import { HomeScreen, BibleScreen } from "../screens";
+import { HomeScreen, BibleScreen, MassScreen } from "../screens";
 import ExamenNavigator from "./ExamenNavigator";
 import PrayerNavigator from "./PrayerNavigator";
 import MoreNavigator from "./MoreNavigator";
@@ -33,12 +33,11 @@ export default function TabNavigator() {
         }}
       />
       <Tab.Screen
-        name="Bible"
-        component={BibleScreen}
+        name="Mass"
+        component={MassScreen}
         options={{
-          headerShown: false,
           tabBarIcon: ({ color }) => {
-            return <Icon type="fa5" name="bible" color={color} />;
+            return <Icon type="fa5" name="church" color={color} />;
           },
         }}
       />

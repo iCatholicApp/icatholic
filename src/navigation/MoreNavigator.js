@@ -6,6 +6,7 @@ import {
   MoreScreen,
   EditReminderScreen,
   AboutScreen,
+  BibleScreen,
 } from "../screens";
 import { Header } from "../components";
 
@@ -20,6 +21,11 @@ export default function MoreNavigator() {
     >
       <MoreStack.Screen name="Other Features" component={MoreScreen} />
       <MoreStack.Screen name="Reminders" component={ReminderScreen} />
+      <MoreStack.Screen
+        name="Bible"
+        component={BibleScreen}
+        options={{ headerShown: false }}
+      />
       <MoreStack.Screen
         name="Create Reminder"
         component={CreateReminderScreen}

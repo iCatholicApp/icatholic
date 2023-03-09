@@ -22,6 +22,11 @@ export default function MoreScreen() {
       />
       <WideButton
         buttonStyle={{ marginBottom: 15 }}
+        text="Bible"
+        onPress={() => navigation.navigate("Bible")}
+      />
+      <WideButton
+        buttonStyle={{ marginBottom: 15 }}
         text="Catechism"
         onPress={() => navigation.navigate("")}
         disabled={true}
