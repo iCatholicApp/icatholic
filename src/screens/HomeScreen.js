@@ -6,12 +6,10 @@ import Romcal from "romcal";
 import { Canada_En } from "@romcal/calendar.canada";
 import colors from "../theme/colors";
 import { Card } from "../components";
-import { getTodaysMass } from "../helper/massReadings";
 
 export default function HomeScreen() {
   const { colors } = useTheme();
 
-  // console.log("colors", colors);
   const currentDateTime = new Date();
   const dateTimeStringForChurchCalendar = `${currentDateTime.getFullYear()}-${(
     "0" +
