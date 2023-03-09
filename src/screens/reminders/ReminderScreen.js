@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.neutral95,
-    padding: 15,
+    paddingHorizontal: 15,
     alignItems: "center",
   },
   buttonBodyStyle: {

@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.neutral95,
-    padding: 15,
+    paddingHorizontal: 15,
   },
   buttonStyle: {
     marginBottom: 15,
@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
   searchInput: {
     width: "100%",
     backgroundColor: colors.white,
+    marginTop: 15,
     marginBottom: 15,
     paddingHorizontal: 15,
     paddingVertical: 10,

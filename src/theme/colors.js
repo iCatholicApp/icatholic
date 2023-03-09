@@ -24,4 +24,26 @@ export default {
   red500: "#db3d36",
   red600: "#cd3534",
   red700: "#bb2c2f",
+
+  // 60% white/black
+  // 30% primary
+  // 10% accent/call to actions
+
+  // Primary colour:
+  // Accent colour: one for light, one for dark
+  // - use for links,
+
+  // Secondary colours:
+  // - 3-5 other colours
+
+  // Neutral colours:
+  // - start with dark, and work with opacity
+  // - 2-3 darks: texts,
+  // - 2-3 lights: used for disabled, borders, dividers, backgrounds, texts, etc.
+
+  // Semantic colours: 4 colours
+  // - red: danger, negative action
+  // - orange: warning, confirmation, attention
+  // - green: positive, successful
+  // - blue: informative, change/action
 };

@@ -9,4 +9,5 @@ export const globalStyles = StyleSheet.create({
   h2: {},
   h3: {},
   p: {},
+  input: {},
 });
