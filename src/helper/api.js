@@ -1,4 +1,9 @@
+// Bible API
 // https://scripture.api.bible/livedocs
+
+// Mass Readings RSS
+// https://universalis.com/canada/n-link.htm
+
 import axios from "axios";
 import Constants from "expo-constants";
 var HTMLParser = require("fast-html-parser");
@@ -57,8 +62,6 @@ dailyMass.interceptors.response.use(
       response.data.length - 3
     );
     const dataJSON = JSON.parse(dataHTML);
-    const dataParsed = HTMLParser.parse(dataJSON);
-    const data = dataParsed.childNodes;
 
     const massReadings = {
       number: dataJSON.number,
@@ -89,14 +92,6 @@ dailyMass.interceptors.response.use(
         text: dataJSON.Mass_G.text,
       },
     };
-
-    // console.log("DATA\n", JSON.stringify(data, null, 2));
-    // console.log("data", dataJSON.Mass_R1.text);
-    // console.log(
-    //   "dataParsed",
-    //   JSON.stringify(HTMLParser.parse(dataJSON.Mass_R1.text), null, 2)
-    // );
-    // console.log("massReadings", JSON.stringify(massReadings, null, 2));
 
     return massReadings;
   },
