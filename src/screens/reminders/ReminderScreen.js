@@ -51,7 +51,7 @@ export default function ReminderScreen() {
           />
         ))}
       {reminders.length === 0 && (
-        <Card style={{ width: "100%", marginBottom: 15 }}>
+        <Card style={{ width: "100%", marginVertical: 15 }}>
           <Text style={{ fontSize: 18 }}>
             Create daily or weekly reminders to pray or do an examen to help
             build a better prayer life.

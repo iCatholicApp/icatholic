@@ -22,11 +22,12 @@
       "buildNumber": "6"
     },
     "android": {
+      "package": "com.ozdv.icatholic",
+      "versionCode": 1,
       "adaptiveIcon": {
         // "foregroundImage": "", not sure what this is
         "backgroundColor": "#FFFFFF"
-      },
-      "package": "com.ozdv.icatholic"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"

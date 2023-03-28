@@ -29,8 +29,8 @@ export default function ExamenQuestionScreen({ route, navigation }) {
           style={[
             styles.card,
             precepts.length === index + 1
-              ? { marginBottom: 30 }
-              : { marginBottom: 15 },
+              ? { marginBottom: 15 }
+              : { marginBottom: 0 },
           ]}
           key={precept.name}
         >
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   card: {
-    marginBottom: 15,
+    marginTop: 15,
   },
   text: {
     fontSize: 18,

@@ -16,6 +16,7 @@ export default function MassScreen() {
   const { width } = useWindowDimensions();
   const [readings, setReadings] = useState({});
   const [loaded, setLoaded] = useState(false);
+
   useEffect(() => {
     getTodaysMassReadings().then((response) => {
       setReadings(response);
@@ -33,14 +34,28 @@ export default function MassScreen() {
           <Accordian title="First Reading" style={styles.card}>
             <Text style={styles.source}>{readings.r1.source}</Text>
             <Text style={styles.heading}>{readings.r1.heading}</Text>
+            <View
+              style={{
+                borderBottomWidth: 1,
+                borderBottomColor: colors.neutral80,
+                marginTop: 10,
+                marginBottom: 20,
+              }}
+            />
             <RenderHTML
               source={{ html: readings.r1.text }}
               contentWidth={width}
+              baseStyle={{ fontSize: 16, color: colors.neutral20 }}
             />
           </Accordian>
           <Accordian title="Responsorial Psalm" style={styles.card}>
             <Text style={styles.source}>{readings.ps.source}</Text>
             <RenderHTML
+              baseStyle={{
+                marginLeft: -42,
+                fontSize: 16,
+                color: colors.neutral20,
+              }}
               source={{ html: readings.ps.text }}
               contentWidth={width}
             />
@@ -49,23 +64,42 @@ export default function MassScreen() {
             <Accordian title="Second Reading" style={styles.card}>
               <Text style={styles.source}>{readings.r2.source}</Text>
               <Text style={styles.heading}>{readings.r2.heading}</Text>
+              <View
+                style={{
+                  borderBottomWidth: 1,
+                  borderBottomColor: colors.neutral80,
+                  marginTop: 10,
+                  marginBottom: 20,
+                }}
+              />
               <RenderHTML
                 source={{ html: readings.r2.text }}
                 contentWidth={width}
+                baseStyle={{ fontSize: 16, color: colors.neutral20 }}
               />
             </Accordian>
           )}
           <Accordian title="Gospel Acclamation" style={styles.card}>
             <Text style={styles.source}>{readings.ga.source}</Text>
             <RenderHTML
+              baseStyle={{
+                marginLeft: -42,
+                fontSize: 16,
+                color: colors.neutral20,
+              }}
               source={{ html: readings.ga.text }}
               contentWidth={width}
             />
           </Accordian>
-          <Accordian title="The Holy Gospel" style={styles.card}>
+          <Accordian
+            title="The Holy Gospel"
+            style={[styles.card, { marginBottom: 15 }]}
+          >
             <Text style={styles.source}>{readings.g.source}</Text>
             <Text style={styles.heading}>{readings.g.heading}</Text>
+            <View style={styles.divider} />
             <RenderHTML
+              baseStyle={{ fontSize: 16, color: colors.neutral20 }}
               source={{ html: readings.g.text }}
               contentWidth={width}
             />
@@ -87,12 +121,20 @@ const styles = StyleSheet.create({
   },
   source: {
     textAlign: "right",
-    fontWeight: "bold",
+    color: colors.neutral30,
     marginVertical: 10,
+    fontSize: 18,
   },
   heading: {
     textAlign: "center",
     fontWeight: "bold",
-    marginVertical: 10,
+    color: colors.neutral20,
+    fontSize: 20,
+  },
+  divider: {
+    borderBottomWidth: 1,
+    borderBottomColor: colors.neutral80,
+    marginTop: 10,
+    marginBottom: 20,
   },
 });

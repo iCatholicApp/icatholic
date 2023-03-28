@@ -46,10 +46,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 15,
     marginTop: 15,
-
-    shadowColor: colors.neutral20,
-    shadowOpacity: 0.2,
-    shadowOffset: { width: 0, height: 2 },
+    // shadowColor: colors.neutral20,
+    // shadowOpacity: 0.2,
+    // shadowOffset: { width: 0, height: 2 },
     backgroundColor: colors.white,
     alignSelf: "center",
     flexDirection: "row",
@@ -64,7 +63,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     fontSize: 24,
     fontWeight: "bold",
-    // marginLeft: -26,
   },
   header: {
     backgroundColor: colors.neutral95,

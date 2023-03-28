@@ -7,7 +7,7 @@ import colors from "../../theme/colors";
 export default function PrayerScreen({ route }) {
   return (
     <ScrollView style={styles.container}>
-      <Card>
+      <Card style={{ marginBottom: 30 }}>
         <Text
           style={{
             fontSize: 22,
