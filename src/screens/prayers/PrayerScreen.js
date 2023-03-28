@@ -18,7 +18,7 @@ export default function PrayerScreen({ route }) {
         >
           {route.params.prayer.label}
         </Text>
-        <Text style={{ fontSize: 18, color: colors.neutral40 }}>
+        <Text style={{ fontSize: 18, color: colors.neutral30 }}>
           {route.params.prayer.prayer}
         </Text>
       </Card>
