@@ -22,7 +22,7 @@ export default function MoreScreen() {
       />
       <WideButton
         buttonStyle={{ marginBottom: 15 }}
-        text="Bible"
+        text="The Holy Bible"
         onPress={() => navigation.navigate("Bible")}
       />
       <WideButton
@@ -37,12 +37,7 @@ export default function MoreScreen() {
         onPress={() => navigation.navigate("")}
         disabled={true}
       />
-      <WideButton
-        buttonStyle={{ marginBottom: 15 }}
-        text="Mass Readings"
-        onPress={() => navigation.navigate("")}
-        disabled={true}
-      />
+
       <WideButton
         buttonStyle={{ marginBottom: 15 }}
         text="Divine Office"
@@ -53,6 +48,7 @@ export default function MoreScreen() {
         buttonStyle={{ marginBottom: 15 }}
         text="About"
         onPress={() => navigation.navigate("About")}
+        disabled={true}
       />
     </ScrollView>
   );

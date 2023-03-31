@@ -15,9 +15,6 @@ export default function EditReminderScreen({ route }) {
 
   const reminder = route.params.reminder;
 
-  const prayer1 = prayerList.find((prayer) => prayer.label === reminder.title);
-  console.log("reminder", prayer1);
-
   const [freq, setFreq] = useState();
   const [time, setTime] = useState();
   const [prayer, setPrayer] = useState();

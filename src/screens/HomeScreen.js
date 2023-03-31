@@ -35,37 +35,41 @@ export default function HomeScreen() {
   return (
     <ScrollView style={styles.container}>
       <Card>
-        <View>
-          <Text style={{ textAlign: "center", fontSize: 20 }}>
-            Good {timeString} Friend!
-          </Text>
+        <View style={styles.header}>
+          <Text style={styles.title}>Good {timeString}!</Text>
         </View>
-        <View style={{ marginTop: 25 }}>
-          <Text style={{ fontSize: 18, textAlign: "center" }}>
-            Today's Feast
+
+        <View style={{ marginTop: 10 }}>
+          <Text style={styles.subtitle}>Today is...</Text>
+          <Text style={styles.date}>
+            {currentDateTime.toLocaleDateString("en-CA", {
+              weekday: "long",
+              month: "long",
+              day: "numeric",
+            })}
           </Text>
-          <View
-            style={{
-              marginTop: 10,
-              backgroundColor: colors.neutral98,
-              padding: 10,
-              borderRadius: 10,
-            }}
-          >
-            {churchCalendar?.[0] && (
-              <Text key={churchCalendar[0]?.id}>{churchCalendar[0]?.name}</Text>
-            )}
-            {churchCalendar?.[1] && (
-              <Text key={churchCalendar[1]?.id}>
-                Or: {churchCalendar[1]?.name}
+          <Text style={styles.subtitle}>Or:</Text>
+          {churchCalendar?.[0] && (
+            <Text style={styles.title} key={churchCalendar[0]?.id}>
+              {churchCalendar[0]?.name}
+            </Text>
+          )}
+          {churchCalendar?.[1] && (
+            <>
+              <Text style={styles.subtitle}>Or:</Text>
+              <Text style={styles.title} key={churchCalendar[1]?.id}>
+                {churchCalendar[1]?.name}
               </Text>
-            )}
-            {churchCalendar?.[2] && (
-              <Text key={churchCalendar[2]?.id}>
-                Or: {churchCalendar[2]?.name}
+            </>
+          )}
+          {churchCalendar?.[2] && (
+            <>
+              <Text style={styles.subtitle}>Or:</Text>
+              <Text style={styles.title} key={churchCalendar[2]?.id}>
+                {churchCalendar[2]?.name}
               </Text>
-            )}
-          </View>
+            </>
+          )}
         </View>
       </Card>
     </ScrollView>
@@ -77,5 +81,32 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.neutral95,
     padding: 15,
+  },
+  header: {
+    marginBottom: 10,
+    paddingBottom: 15,
+    borderBottomColor: colors.neutral95,
+    borderBottomWidth: 0.5,
+  },
+  title: {
+    textAlign: "center",
+    fontWeight: "bold",
+    color: colors.neutral20,
+    fontSize: 20,
+  },
+  subtitle: {
+    textAlign: "center",
+    fontWeight: "",
+    color: colors.neutral20,
+    fontSize: 16,
+    marginBottom: 10,
+  },
+
+  date: {
+    textAlign: "center",
+    fontWeight: "bold",
+    color: colors.neutral20,
+    fontSize: 20,
+    marginBottom: 15,
   },
 });

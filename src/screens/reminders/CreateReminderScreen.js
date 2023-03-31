@@ -11,6 +11,7 @@ export default function CreateReminderScreen() {
 
   const [time, setTime] = useState(new Date());
   const [prayer, setPrayer] = useState();
+  const [error, setError] = useState("");
 
   const prayerList = [...prayers, { label: "Examen", value: "examen" }];
 
@@ -18,7 +19,7 @@ export default function CreateReminderScreen() {
     if (Object.values(prayer).length) {
       await schedulePushNotification();
     } else {
-      console.log("not filled out");
+      setError("Select a prayer to create a reminder");
     }
   };
 
@@ -58,11 +59,19 @@ export default function CreateReminderScreen() {
             <SelectInput
               options={prayerList}
               placeholder="Select what to pray"
-              onPress={(selected) => setPrayer(selected)}
+              onPress={(selected) => {
+                setPrayer(selected);
+                setError("");
+              }}
               // searchable
             />
           </View>
         </View>
+        {error && (
+          <View style={styles.errorMessage}>
+            <Text style={styles.errorMessageText}>{error}</Text>
+          </View>
+        )}
         <View style={styles.footerStyles}>
           <Button
             text="Cancel"
@@ -86,6 +95,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.neutral95,
     paddingHorizontal: 15,
+    marginTop: 15,
   },
   header: {
     marginBottom: 10,
@@ -101,10 +111,23 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     fontWeight: "bold",
-    color: colors.neutral50,
+    color: colors.neutral30,
   },
   footerStyles: {
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+  errorMessage: {
+    paddingVertical: 10,
+    backgroundColor: colors.red200,
+    borderWidth: 1,
+    borderColor: colors.red500,
+    borderRadius: 10,
+    marginBottom: 10,
+  },
+  errorMessageText: {
+    textAlign: "center",
+    fontSize: 14,
+    fontWeight: "bold",
   },
 });

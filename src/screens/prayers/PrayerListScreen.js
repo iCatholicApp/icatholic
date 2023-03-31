@@ -5,12 +5,10 @@ import { Accordian, WideButton } from "../../components";
 import colors from "../../theme/colors";
 import prayers from "../../constants/prayers";
 import ListItem from "../../components/List/ListItem";
-import List from "../../components/List/List";
 
 export default function PrayerListScreen() {
   const navigation = useNavigation();
   const [searchString, setSearchString] = useState("");
-  console.log("searchstring", searchString);
 
   return (
     <ScrollView style={styles.container}>
@@ -20,8 +18,7 @@ export default function PrayerListScreen() {
         onChangeText={(text) => setSearchString(text)}
         style={styles.searchInput}
       />
-      {/* {searchString !== "" ? ( */}
-      {
+      {searchString !== "" ? (
         prayers
           .filter((prayer) => {
             if (
@@ -38,80 +35,97 @@ export default function PrayerListScreen() {
               onPress={() => navigation.navigate("Prayer", { prayer })}
             />
           ))
-        // ) : (
-        // <>
-        //   <Accordian title="Latin prayers" style={styles.accordian}>
-        //     {prayers.map((prayer, i) => (
-        //       <ListItem
-        //         key={i}
-        //         text={prayer.label}
-        //         onPress={() => navigation.navigate("Prayer", { prayer })}
-        //       />
-        //     ))}
-        //   </Accordian>
-        //   <Accordian title="Marian prayers" style={styles.accordian}>
-        //     {prayers.map((prayer, i) => (
-        //       <ListItem
-        //         key={i}
-        //         text={prayer.label}
-        //         onPress={() => navigation.navigate("Prayer", { prayer })}
-        //       />
-        //     ))}
-        //   </Accordian>
-        //   <Accordian title="Litanies" style={styles.accordian}>
-        //     {prayers.map((prayer, i) => (
-        //       <ListItem
-        //         key={i}
-        //         text={prayer.label}
-        //         onPress={() => navigation.navigate("Prayer", { prayer })}
-        //       />
-        //     ))}
-        //   </Accordian>
-        //   <Accordian title="Prayers in Mass" style={styles.accordian}>
-        //     {prayers.map((prayer, i) => (
-        //       <ListItem
-        //         key={i}
-        //         text={prayer.label}
-        //         onPress={() => navigation.navigate("Prayer", { prayer })}
-        //       />
-        //     ))}
-        //   </Accordian>
-        //   <Accordian title="Devotional prayers" style={styles.accordian}>
-        //     {prayers.map((prayer, i) => (
-        //       <ListItem
-        //         key={i}
-        //         text={prayer.label}
-        //         onPress={() => navigation.navigate("Prayer", { prayer })}
-        //       />
-        //     ))}
-        //   </Accordian>
-        //   <Accordian
-        //     title="The Holy Rosary & Mysteries"
-        //     style={styles.accordian}
-        //   >
-        //     <View style={styles.divider} />
-        //     {prayers.map((prayer, i) => (
-        //       <WideButton
-        //         key={i}
-        //         text={prayer.label}
-        //         buttonStyle={styles.buttonStyle}
-        //         textStyle={styles.accordianItems}
-        //         onPress={() => navigation.navigate("Prayer", { prayer })}
-        //       />
-        //     ))}
-        //   </Accordian>
-        //   <Accordian title="Other prayers" style={styles.accordian}>
-        //     {prayers.map((prayer, i) => (
-        //       <ListItem
-        //         key={i}
-        //         text={prayer.label}
-        //         onPress={() => navigation.navigate("Prayer", { prayer })}
-        //       />
-        //     ))}
-        //   </Accordian>
-        // </>
-        // )}
-      }
+      ) : (
+        <>
+          <Accordian title="Marian prayers" style={styles.accordian}>
+            {prayers.map((prayer, i) => {
+              if (prayer.category[0] === "Marian") {
+                return (
+                  <ListItem
+                    key={i}
+                    text={prayer.label}
+                    onPress={() => navigation.navigate("Prayer", { prayer })}
+                  />
+                );
+              }
+            })}
+          </Accordian>
+          {/* <Accordian
+            title="The Holy Rosary & Mysteries"
+            style={styles.accordian}
+          >
+            {prayers.map((prayer, i) => {
+              if (prayer.category[0] === "Rosary") {
+                return (
+                  <ListItem
+                    key={i}
+                    text={prayer.label}
+                    onPress={() => navigation.navigate("Prayer", { prayer })}
+                  />
+                );
+              }
+            })}
+          </Accordian> */}
+          <Accordian title="Litanies" style={styles.accordian}>
+            {prayers.map((prayer, i) => {
+              if (prayer.category[0] === "Litany") {
+                return (
+                  <ListItem
+                    key={i}
+                    text={prayer.label}
+                    onPress={() => navigation.navigate("Prayer", { prayer })}
+                  />
+                );
+              }
+            })}
+          </Accordian>
+          <Accordian title="Latin prayers" style={styles.accordian}>
+            {prayers.map((prayer, i) => {
+              if (prayer.category[0] === "Latin") {
+                return (
+                  <ListItem
+                    key={i}
+                    text={prayer.label}
+                    onPress={() => navigation.navigate("Prayer", { prayer })}
+                  />
+                );
+              }
+            })}
+          </Accordian>
+
+          {/* <Accordian title="Prayers in Mass" style={styles.accordian}>
+            {prayers.map((prayer, i) => (
+              <ListItem
+                key={i}
+                text={prayer.label}
+                onPress={() => navigation.navigate("Prayer", { prayer })}
+              />
+            ))}
+          </Accordian>
+          <Accordian title="Devotional prayers" style={styles.accordian}>
+            {prayers.map((prayer, i) => (
+              <ListItem
+                key={i}
+                text={prayer.label}
+                onPress={() => navigation.navigate("Prayer", { prayer })}
+              />
+            ))}
+          </Accordian> */}
+          <Accordian title="Other prayers" style={styles.accordian}>
+            {prayers.map((prayer, i) => {
+              if (prayer.category[0] === "Other") {
+                return (
+                  <ListItem
+                    key={i}
+                    text={prayer.label}
+                    onPress={() => navigation.navigate("Prayer", { prayer })}
+                  />
+                );
+              }
+            })}
+          </Accordian>
+        </>
+      )}
     </ScrollView>
   );
 }

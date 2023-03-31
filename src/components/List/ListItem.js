@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     justifyContent: "space-between",
-    borderTopWidth: 1,
+    borderTopWidth: 0.5,
     borderTopColor: colors.neutral90,
     marginTop: 10,
     paddingTop: 10,

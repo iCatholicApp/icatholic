@@ -44,7 +44,6 @@ export default function SelectInput(props) {
   };
 
   const handleOpen = () => {
-    console.log("handleopen", open);
     if (open) slideUp();
     if (!open) slideDown();
   };
