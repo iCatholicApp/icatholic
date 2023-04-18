@@ -70,6 +70,13 @@ export default [
       "The Angel of the Lord declared to Mary:\nAnd she conceived of the Holy Spirit.\n\nHail Mary...\n\nBehold the handmaid of the Lord:\nBe it done unto meaccording to Thy word.\n\nHail Mary...\n\nAnd the Word was made Flesh:\nAnd dwelt among us\n\nHail Mary...\n\nPray for us, O Holy Mother of God, that we may be made worthy of the promises of Christ.\n\nLet us pray:\n\nPour forth, we beseech Thee, O Lord, Thy grace intoour hearts; that we, to whom the incarnation of Christ, Thy Son, was made known by the message of an angel, may by His Passion and Cross be brought to the glory of His Resurrection, through the same Christ Our Lord.\n\nAmen.",
   },
   {
+    label: "The Memorarae",
+    value: "memorarae",
+    category: ["Marian"],
+    prayer:
+      "Remember, O most gracious Virgin Mary, that never was it known that anyone who fled to thy protection, implored thy help, or sought thine intercession was left unaided. \nInspired by this confidence, I fly unto thee, O Virgin of virgins, my mother; to thee do I come, before thee I stand, sinful and sorrowful. O Mother of the Word Incarnate, despise not my petitions, but in thy mercy hear and answer me. \n\nAmen.",
+  },
+  {
     label: "Salve Regina",
     value: "salveRegina",
     category: ["Latin"],
@@ -77,13 +84,6 @@ export default [
       "SALVE, Regina, mater misericordiae, vita, dulcedo, et spes nostra, salve. Ad te clamamus exsules filii Hevae. Ad te suspiramus, gementes et flentes in hac lacrimarum valle.	\nEia, ergo, advocata nostra, illos tuos misericordes oculos ad nos converte. Et Iesum, benedictum fructum ventris tui, nobis post hoc exsilium ostende.\nO clemens, O pia, O dulcis Virgo Maria.\n\nAmen.",
   },
 
-  {
-    label: "Pater Noster",
-    value: "paterNoster",
-    category: ["Latin"],
-    prayer:
-      "Pater Noster,\nqui es in caelis,\nsanctificetur nomen tuum.\nAdveniat regnum tuum.\nFiat voluntas tua,\nsicut in caelo et in terra.\nPanem nostrum quotidianum da nobis hodie,\net dimitte nobis debita nostra\nsicut et nos dimittimus debitoribus nostris.\nEt ne nos inducas in tentationem,\nsed libera nos a malo.\n\nAmen.",
-  },
   {
     label: "Pater Noster",
     value: "paterNoster",

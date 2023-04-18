@@ -11,7 +11,7 @@ var HTMLParser = require("fast-html-parser");
 const BIBLE_API_KEY = Constants.expoConfig.extra.bible_api_key;
 
 const bibleAPI = axios.create({
-  baseURL: `https://api.scripture.api.bible/v1/bibles/06125adad2d5898a-01`,
+  baseURL: `https://api.scripture.api.bible/v1/bibles/179568874c45066f-01`,
   headers: { "api-key": BIBLE_API_KEY },
 });
 

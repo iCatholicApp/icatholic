@@ -5,6 +5,7 @@ import {
   View,
   Text,
   useWindowDimensions,
+  ActivityIndicator,
 } from "react-native";
 
 import colors from "../theme/colors";
@@ -26,7 +27,7 @@ export default function MassScreen() {
 
   return (
     <ScrollView style={styles.container}>
-      {loaded && (
+      {loaded ? (
         <View>
           <Card style={styles.card}>
             <Text style={styles.heading}>{readings.day}</Text>
@@ -105,6 +106,10 @@ export default function MassScreen() {
             />
           </Accordian>
         </View>
+      ) : (
+        <View style={styles.loader}>
+          <ActivityIndicator size="large" color={colors.neutral60} />
+        </View>
       )}
     </ScrollView>
   );
@@ -136,5 +141,11 @@ const styles = StyleSheet.create({
     borderBottomColor: colors.neutral80,
     marginTop: 10,
     marginBottom: 20,
+  },
+  loader: {
+    flex: 1,
+    padding: 15,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
