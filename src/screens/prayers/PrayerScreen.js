@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     marginBottom: 10,
     fontWeight: "bold",
-    color: colors.neutral200,
+    color: colors.neutral800,
   },
   prayerBody: {
     fontSize: 18,

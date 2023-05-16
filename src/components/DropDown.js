@@ -33,7 +33,7 @@ export default function DropDown(props) {
         width: 0,
       }}
       style={{
-        backgroundColor: open ? colors.neutral800 : colors.primary,
+        backgroundColor: open ? colors.neutral300 : colors.primary,
         borderRadius: open ? 15 : 20,
         borderWidth: 0,
         minHeight: 10,
@@ -55,7 +55,7 @@ export default function DropDown(props) {
       }}
       dropDownContainerStyle={{
         borderRadius: 15,
-        backgroundColor: open ? colors.neutral800 : colors.primary,
+        backgroundColor: open ? colors.neutral300 : colors.primary,
         borderColor: colors.neutral700,
         borderWidth: 0,
       }}
@@ -64,8 +64,8 @@ export default function DropDown(props) {
         color: colors.neutral900,
       }}
       searchTextInputStyle={{
-        backgroundColor: colors.neutral800,
-        borderColor: colors.neutral700,
+        backgroundColor: colors.neutral300,
+        borderColor: colors.neutral500,
         color: colors.neutral900,
       }}
       selectedItemLabelStyle={{
