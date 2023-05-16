@@ -15,7 +15,7 @@ export default function TimeInput(props) {
         onPress={() => setShowPicker(!showPicker)}
         style={styles.button}
       >
-        <Text style={{ fontSize: 16, color: colors.neutral30 }}>
+        <Text style={{ fontSize: 16, color: colors.neutral700 }}>
           {value.toLocaleTimeString("en-ca", {
             hour: "numeric",
             minute: "numeric",
@@ -26,7 +26,7 @@ export default function TimeInput(props) {
       {showPicker && (
         <View
           style={{
-            backgroundColor: colors.neutral95,
+            backgroundColor: colors.neutral200,
             borderRadius: 10,
             maxWidth: "50%",
             marginTop: 10,
@@ -37,14 +37,14 @@ export default function TimeInput(props) {
             mode="time"
             is24Hour={false}
             onChange={onChange}
-            // textColor={colors.neutral90}
+            // textColor={colors.neutral800}
             display="spinner"
             style={
               {
                 // borderRadius: 10,
               }
             }
-            // accentColor={colors.blue400}
+            // accentColor={colors.primary}
             // themeVariant="dark"
           />
         </View>
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
   },
   button: {
-    backgroundColor: colors.neutral95,
+    backgroundColor: colors.neutral200,
     borderRadius: 10,
     paddingHorizontal: 15,
     paddingVertical: 10,

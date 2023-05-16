@@ -51,7 +51,7 @@ export default function ExamenQuestionScreen({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.neutral95,
+    backgroundColor: colors.neutral200,
     paddingHorizontal: 15,
   },
   card: {
@@ -59,12 +59,12 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    color: colors.neutral40,
+    color: colors.neutral700,
   },
   header: {
     fontWeight: "bold",
     fontSize: 18,
     marginTop: 20,
-    color: colors.neutral40,
+    color: colors.neutral700,
   },
 });

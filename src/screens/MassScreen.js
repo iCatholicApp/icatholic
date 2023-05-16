@@ -34,19 +34,19 @@ export default function MassScreen() {
           </Card>
           <Accordian title="First Reading" style={styles.card}>
             <Text style={styles.source}>{readings.r1.source}</Text>
-            <Text style={styles.heading}>{readings.r1.heading}</Text>
+            {/* <Text style={styles.heading}>{readings.r1.heading}</Text>
             <View
               style={{
                 borderBottomWidth: 1,
-                borderBottomColor: colors.neutral80,
+                borderBottomColor: colors.neutral300,
                 marginTop: 10,
                 marginBottom: 20,
               }}
-            />
+            /> */}
             <RenderHTML
               source={{ html: readings.r1.text }}
               contentWidth={width}
-              baseStyle={{ fontSize: 16, color: colors.neutral20 }}
+              baseStyle={{ fontSize: 16, color: colors.neutral700 }}
             />
           </Accordian>
           <Accordian title="Responsorial Psalm" style={styles.card}>
@@ -55,7 +55,7 @@ export default function MassScreen() {
               baseStyle={{
                 marginLeft: -42,
                 fontSize: 16,
-                color: colors.neutral20,
+                color: colors.neutral700,
               }}
               source={{ html: readings.ps.text }}
               contentWidth={width}
@@ -64,19 +64,19 @@ export default function MassScreen() {
           {readings.r2.heading && (
             <Accordian title="Second Reading" style={styles.card}>
               <Text style={styles.source}>{readings.r2.source}</Text>
-              <Text style={styles.heading}>{readings.r2.heading}</Text>
+              {/* <Text style={styles.heading}>{readings.r2.heading}</Text>
               <View
                 style={{
                   borderBottomWidth: 1,
-                  borderBottomColor: colors.neutral80,
+                  borderBottomColor: colors.neutral300,
                   marginTop: 10,
                   marginBottom: 20,
                 }}
-              />
+              /> */}
               <RenderHTML
                 source={{ html: readings.r2.text }}
                 contentWidth={width}
-                baseStyle={{ fontSize: 16, color: colors.neutral20 }}
+                baseStyle={{ fontSize: 16, color: colors.neutral700 }}
               />
             </Accordian>
           )}
@@ -86,7 +86,7 @@ export default function MassScreen() {
               baseStyle={{
                 marginLeft: -42,
                 fontSize: 16,
-                color: colors.neutral20,
+                color: colors.neutral700,
               }}
               source={{ html: readings.ga.text }}
               contentWidth={width}
@@ -97,10 +97,10 @@ export default function MassScreen() {
             style={[styles.card, { marginBottom: 15 }]}
           >
             <Text style={styles.source}>{readings.g.source}</Text>
-            <Text style={styles.heading}>{readings.g.heading}</Text>
-            <View style={styles.divider} />
+            {/* <Text style={styles.heading}>{readings.g.heading}</Text> */}
+            {/* <View style={styles.divider} /> */}
             <RenderHTML
-              baseStyle={{ fontSize: 16, color: colors.neutral20 }}
+              baseStyle={{ fontSize: 16, color: colors.neutral700 }}
               source={{ html: readings.g.text }}
               contentWidth={width}
             />
@@ -108,7 +108,7 @@ export default function MassScreen() {
         </View>
       ) : (
         <View style={styles.loader}>
-          <ActivityIndicator size="large" color={colors.neutral60} />
+          <ActivityIndicator size="large" color={colors.neutral500} />
         </View>
       )}
     </ScrollView>
@@ -118,7 +118,7 @@ export default function MassScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.neutral95,
+    backgroundColor: colors.neutral200,
     paddingHorizontal: 15,
   },
   card: {
@@ -126,19 +126,19 @@ const styles = StyleSheet.create({
   },
   source: {
     textAlign: "right",
-    color: colors.neutral30,
+    color: colors.neutral800,
     marginVertical: 10,
     fontSize: 18,
   },
   heading: {
     textAlign: "center",
     fontWeight: "bold",
-    color: colors.neutral20,
+    color: colors.neutral900,
     fontSize: 20,
   },
   divider: {
     borderBottomWidth: 1,
-    borderBottomColor: colors.neutral80,
+    borderBottomColor: colors.neutral300,
     marginTop: 10,
     marginBottom: 20,
   },

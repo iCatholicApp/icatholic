@@ -55,7 +55,7 @@ export default function ExamenScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.neutral95,
+    backgroundColor: colors.neutral200,
     paddingHorizontal: 15,
     flexDirection: "column",
   },

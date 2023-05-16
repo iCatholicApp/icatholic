@@ -120,7 +120,7 @@ export default function SelectInput(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.neutral95,
+    backgroundColor: colors.neutral200,
     borderRadius: 10,
     paddingHorizontal: 15,
     paddingVertical: 10,
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
   menu: {
     overflow: "hidden",
     marginTop: 10,
-    backgroundColor: colors.neutral95,
+    backgroundColor: colors.neutral200,
     borderRadius: 10,
     paddingHorizontal: 10,
   },
@@ -140,6 +140,6 @@ const styles = StyleSheet.create({
   },
   inputText: {
     fontSize: 16,
-    color: colors.neutral30,
+    color: colors.neutral700,
   },
 });

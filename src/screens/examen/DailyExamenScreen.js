@@ -69,7 +69,7 @@ export default function DailyExamenScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.neutral95,
+    backgroundColor: colors.neutral200,
     padding: 15,
   },
   card: {

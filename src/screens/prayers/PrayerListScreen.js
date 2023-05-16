@@ -133,7 +133,7 @@ export default function PrayerListScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.neutral95,
+    backgroundColor: colors.neutral200,
     paddingHorizontal: 15,
   },
   buttonStyle: {
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     width: "100%",
-    backgroundColor: colors.white,
+    backgroundColor: colors.neutral100,
     marginTop: 15,
     marginBottom: 15,
     paddingHorizontal: 15,
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
   },
   divider: {
     borderBottomWidth: 1,
-    borderBottomColor: colors.neutral80,
+    borderBottomColor: colors.neutral400,
     marginTop: 10,
     marginBottom: 20,
   },

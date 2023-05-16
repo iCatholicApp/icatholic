@@ -16,7 +16,7 @@ export default function Accordian(props) {
             type="ion"
             name={open ? "chevron-down" : "chevron-up"}
             size={26}
-            color={colors.neutral20}
+            color={colors.primary}
             onPress={() => setOpen(!open)}
           />
         </View>
@@ -42,6 +42,6 @@ const styles = StyleSheet.create({
   titleTextStyle: {
     fontSize: 20,
     fontWeight: "bold",
-    color: colors.neutral20,
+    color: colors.neutral900,
   },
 });

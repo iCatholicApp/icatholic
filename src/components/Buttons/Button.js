@@ -29,7 +29,7 @@ export default function Button(props) {
 const styles = StyleSheet.create({
   container: {
     // width: 100,
-    backgroundColor: colors.blue400,
+    backgroundColor: colors.primary,
     borderRadius: 10,
     justifyContent: "space-between",
     paddingVertical: 10,
@@ -41,13 +41,13 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     alignSelf: "center",
-    color: colors.white,
+    color: colors.neutral100,
     fontSize: 18,
     fontWeight: "700",
   },
   secondaryButtonText: {
     alignSelf: "center",
-    color: colors.neutral30,
+    // color: colors.neutral700,
     fontSize: 18,
     fontWeight: "700",
   },

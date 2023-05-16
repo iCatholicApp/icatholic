@@ -39,7 +39,7 @@ export default function ReminderScreen() {
                   type="fa5"
                   name="clock"
                   size={20}
-                  color={colors.neutral30}
+                  color={colors.neutral700}
                 />
                 <Text numberOfLines={1} style={styles.labelStyles}>
                   {reminder.body}
@@ -62,7 +62,7 @@ export default function ReminderScreen() {
         type="ion"
         name="add-sharp"
         size={24}
-        color={colors.blue400}
+        color={colors.primary}
         iconStyle={styles.createButtonIconStyle}
         labelStyles={styles.buttonLabelStyles}
         label="Add Reminder"
@@ -76,7 +76,7 @@ export default function ReminderScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.neutral95,
+    backgroundColor: colors.neutral200,
     paddingHorizontal: 15,
     alignItems: "center",
   },
@@ -88,11 +88,11 @@ const styles = StyleSheet.create({
   },
   labelStyles: {
     fontSize: 20,
-    color: colors.neutral30,
+    color: colors.neutral700,
     fontWeight: "600",
   },
   buttonLabelStyles: {
-    color: colors.blue400,
+    color: colors.primary,
     fontSize: 20,
     fontWeight: "600",
     marginLeft: 5,
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     alignSelf: "center",
-    backgroundColor: colors.white,
+    backgroundColor: colors.neutral100,
     padding: 15,
     paddingHorizontal: 25,
     borderRadius: 25,

@@ -16,7 +16,7 @@ export default function TabNavigator() {
     <Tab.Navigator
       initialRouteName="HomeStack"
       screenOptions={{
-        tabBarActiveTintColor: colors.blue400,
+        tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.neutral50,
         tabBarLabelStyle: styles.label,
         header: (props) => <Header props={props} />,

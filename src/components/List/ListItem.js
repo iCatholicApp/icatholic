@@ -28,7 +28,7 @@ export default function ListItem(props) {
         type="ion"
         name="chevron-forward"
         size={16}
-        color={disabled ? colors.neutral80 : colors.neutral20}
+        color={disabled ? colors.neutral700 : colors.primary}
       />
     </TouchableOpacity>
   );
@@ -36,27 +36,27 @@ export default function ListItem(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.neutral100,
     alignItems: "center",
     flexDirection: "row",
     justifyContent: "space-between",
     borderTopWidth: 0.5,
-    borderTopColor: colors.neutral90,
+    borderTopColor: colors.neutral300,
     marginTop: 10,
     paddingTop: 10,
   },
   disabledContainer: {
-    backgroundColor: colors.neutral90,
+    backgroundColor: colors.neutral300,
     alignItems: "center",
     flexDirection: "row",
     justifyContent: "space-between",
   },
   disabledtext: {
     fontSize: 16,
-    color: colors.neutral70,
+    color: colors.neutral700,
   },
   text: {
     fontSize: 18,
-    color: colors.neutral30,
+    color: colors.neutral800,
   },
 });

@@ -18,17 +18,17 @@ export default function PrayerScreen({ route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.neutral95,
+    backgroundColor: colors.neutral200,
     padding: 15,
   },
   prayerHeader: {
     fontSize: 22,
     marginBottom: 10,
     fontWeight: "bold",
-    color: colors.neutral20,
+    color: colors.neutral200,
   },
   prayerBody: {
     fontSize: 18,
-    color: colors.neutral30,
+    color: colors.neutral700,
   },
 });

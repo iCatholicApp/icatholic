@@ -20,6 +20,7 @@ export default function Header({ props }) {
             size={26}
             iconStyle={styles.backButton}
             onPress={navigation.goBack}
+            color={colors.primary}
           />
         )}
         <Text style={styles.title}>{title}</Text>
@@ -46,10 +47,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 15,
     marginTop: 15,
-    // shadowColor: colors.neutral20,
+    // shadowColor: colors.neutral900,
     // shadowOpacity: 0.2,
     // shadowOffset: { width: 0, height: 2 },
-    backgroundColor: colors.white,
+    backgroundColor: colors.neutral100,
     alignSelf: "center",
     flexDirection: "row",
     alignItems: "center",
@@ -62,9 +63,10 @@ const styles = StyleSheet.create({
     textAlign: "center",
     flexDirection: "column",
     fontSize: 24,
+    color: colors.primary,
     fontWeight: "bold",
   },
   header: {
-    backgroundColor: colors.neutral95,
+    backgroundColor: colors.neutral200,
   },
 });

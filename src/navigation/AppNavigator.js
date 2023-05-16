@@ -74,8 +74,8 @@ export default function AppNavigator() {
   }, []);
   return (
     <Fragment>
-      <SafeAreaView style={{ flex: 0, backgroundColor: colors.neutral95 }} />
-      <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
+      <SafeAreaView style={{ flex: 0, backgroundColor: colors.neutral200 }} />
+      <SafeAreaView style={{ flex: 1, backgroundColor: colors.neutral100 }}>
         <NavigationContainer
           linking={linking}
           theme={scheme === "dark" ? DarkTheme : DefaultTheme}

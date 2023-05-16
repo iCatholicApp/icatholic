@@ -79,25 +79,25 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.neutral95,
+    backgroundColor: colors.neutral200,
     padding: 15,
   },
   header: {
     marginBottom: 10,
     paddingBottom: 15,
-    borderBottomColor: colors.neutral95,
+    borderBottomColor: colors.neutral200,
     borderBottomWidth: 0.5,
   },
   title: {
     textAlign: "center",
     fontWeight: "bold",
-    color: colors.neutral20,
+    color: colors.neutral900,
     fontSize: 20,
   },
   subtitle: {
     textAlign: "center",
     fontWeight: "",
-    color: colors.neutral20,
+    color: colors.neutral900,
     fontSize: 16,
     marginBottom: 10,
   },
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   date: {
     textAlign: "center",
     fontWeight: "bold",
-    color: colors.neutral20,
+    color: colors.neutral900,
     fontSize: 20,
     marginBottom: 15,
   },

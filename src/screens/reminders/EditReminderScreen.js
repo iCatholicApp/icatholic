@@ -75,7 +75,7 @@ export default function EditReminderScreen({ route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.neutral95,
+    backgroundColor: colors.neutral200,
     paddingHorizontal: 15,
   },
   header: {
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingBottom: 10,
     paddingTop: 10,
-    borderBottomColor: colors.neutral80,
+    borderBottomColor: colors.neutral700,
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
   text: {

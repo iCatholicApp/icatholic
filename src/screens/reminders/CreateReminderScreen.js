@@ -76,7 +76,11 @@ export default function CreateReminderScreen() {
           <Button
             text="Cancel"
             type="secondary"
-            textStyle={{ fontWeight: "bold", fontSize: "18" }}
+            textStyle={{
+              fontWeight: "bold",
+              fontSize: "18",
+              color: colors.red,
+            }}
             onPress={() => navigation.navigate("Reminders")}
           />
           <Button
@@ -93,7 +97,7 @@ export default function CreateReminderScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.neutral95,
+    backgroundColor: colors.neutral200,
     paddingHorizontal: 15,
     marginTop: 15,
   },
@@ -105,13 +109,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingBottom: 10,
-    borderBottomColor: colors.neutral80,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    // borderBottomColor: colors.neutral300,
+    // borderBottomWidth: StyleSheet.hairlineWidth,
   },
   text: {
     fontSize: 20,
     fontWeight: "bold",
-    color: colors.neutral30,
+    color: colors.neutral900,
   },
   footerStyles: {
     flexDirection: "row",
@@ -119,15 +123,16 @@ const styles = StyleSheet.create({
   },
   errorMessage: {
     paddingVertical: 10,
-    backgroundColor: colors.red200,
+    backgroundColor: colors.neutral100,
     borderWidth: 1,
-    borderColor: colors.red500,
+    borderColor: colors.red,
     borderRadius: 10,
     marginBottom: 10,
   },
   errorMessageText: {
     textAlign: "center",
     fontSize: 14,
+    color: colors.red,
     fontWeight: "bold",
   },
 });

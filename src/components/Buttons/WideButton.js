@@ -36,7 +36,7 @@ export default function WideButton(props) {
           type="ion"
           name="chevron-forward"
           size={24}
-          color={disabled ? colors.neutral80 : colors.neutral20}
+          color={disabled ? colors.neutral700 : colors.primary}
         />
       </View>
     </TouchableOpacity>
@@ -45,7 +45,7 @@ export default function WideButton(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.neutral100,
     alignItems: "center",
     flexDirection: "row",
     borderRadius: 10,
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   },
   containerIcon: {},
   disabledContainer: {
-    backgroundColor: colors.neutral90,
+    backgroundColor: colors.neutral300,
     alignItems: "center",
     flexDirection: "row",
     borderRadius: 10,
@@ -65,11 +65,11 @@ const styles = StyleSheet.create({
   },
   disabledButtonText: {
     fontSize: 16,
-    color: colors.neutral70,
+    color: colors.neutral800,
   },
   buttonText: {
     fontSize: 20,
-    color: colors.neutral20,
+    color: colors.neutral900,
     fontWeight: "bold",
   },
   bodyStyle: {
