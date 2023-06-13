@@ -41,7 +41,7 @@
       [
         "expo-notifications",
         {
-          "sounds": ["./assets/mixkit-positive-notification-951.wav"]
+          "sounds": ["./assets/notification.wav"]
         }
       ]
     ]

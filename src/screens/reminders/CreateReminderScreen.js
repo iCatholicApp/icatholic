@@ -32,7 +32,7 @@ export default function CreateReminderScreen() {
           minute: "numeric",
         })}`,
         // data: { data: "goes here" },
-        sound: "mixkit-positive-notification-951.wav",
+        sound: "notification.wav",
       },
       trigger: {
         hour: time.getHours(),
