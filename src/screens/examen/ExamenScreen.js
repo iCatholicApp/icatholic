@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   text: {
-    // fontSize: 14,
+    color: colors.neutral800,
     fontSize: 18,
   },
   child: {

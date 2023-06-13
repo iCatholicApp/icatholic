@@ -3,7 +3,7 @@ export const examination = [
   {
     title: "First Commandment",
     commandment:
-      "1: I am the LORD your God. You shall worship the Lord your God and Him only shall you serve.",
+      "I am the LORD your God. You shall worship the Lord your God and Him only shall you serve.",
     questions: [
       ["Disobeyed the commandments of God or the Church?"],
       [
@@ -37,7 +37,7 @@ export const examination = [
   },
   {
     title: "Second Commandment",
-    commandment: "2: You shall not take the name of the Lord your God in vain.",
+    commandment: "You shall not take the name of the Lord your God in vain.",
     questions: [
       ["Used the name of God in cursing or blasphemy?"],
       ["Failed to keep vows or promises that I have made to God?"],
@@ -57,7 +57,7 @@ export const examination = [
   },
   {
     title: "Third Commandment",
-    commandment: "3: Remember to keep holy the Sabbath day.",
+    commandment: "Remember to keep holy the Sabbath day.",
     questions: [
       ["Set time aside each day for personal prayer to God?"],
       [
@@ -80,7 +80,7 @@ export const examination = [
   },
   {
     title: "Fourth Commandment",
-    commandment: "4: Honor your father and your mother.",
+    commandment: "Honor your father and your mother.",
     questions: [
       [
         "(If still under my parents' care) Obeyed all that my parents reasonably asked of me?",
@@ -117,7 +117,7 @@ export const examination = [
   },
   {
     title: "Fifth Commandment",
-    commandment: "5: You shall not kill.",
+    commandment: "You shall not kill.",
     questions: [
       ["Unjustly and intentionally killed a human being?"],
       [
@@ -162,7 +162,7 @@ export const examination = [
   {
     title: "Sixth & Ninth Commandment",
     commandment:
-      "6 & 9: You shall not commit adultery. & You shall not covet your neighbor's wife.",
+      "You shall not commit adultery. & \nYou shall not covet your neighbor's wife.",
     questions: [
       ["Practiced the virtue of chastity?"],
       [
@@ -211,7 +211,7 @@ export const examination = [
   {
     title: "Seventh & Tenth Commandment",
     commandment:
-      "7 & 10: You shall not steal. & You shall not covet your neighbor's goods.",
+      "You shall not steal. & \nYou shall not covet your neighbor's goods.",
     questions: [
       [
         "Stolen? (Take something that doesn't belong to me against the reasonable will of the owner.)",
@@ -241,7 +241,7 @@ export const examination = [
   },
   {
     title: "Eighth Commandment",
-    commandment: "8: You shall not bear false witness against your neighbor.",
+    commandment: "You shall not bear false witness against your neighbor.",
     questions: [
       ["Lied?"],
       ["Knowingly and willfully deceived another?"],
@@ -273,7 +273,7 @@ export const examination = [
 export const precepts = [
   {
     title: "First Precept",
-    name: "1: You shall attend Mass on Sundays and Holy Days of Obligation.",
+    name: "You shall attend Mass on Sundays and Holy Days of Obligation.",
     questions: [
       ["Have I..."],
       ["Attended Mass every Sunday?"],
@@ -282,7 +282,7 @@ export const precepts = [
   },
   {
     title: "Second Precept",
-    name: "2: You shall confess your sins at least once a year.",
+    name: "You shall confess your sins at least once a year.",
     questions: [
       ["Have I..."],
       ["Made a good Confession of my mortal sins least once a year?"],
@@ -293,7 +293,7 @@ export const precepts = [
   },
   {
     title: "Third Precept",
-    name: "3: You shall humbly receive your Creator in Holy Communion at least during the Easter season.",
+    name: "You shall humbly receive your Creator in Holy Communion at least during the Easter season.",
     questions: [
       ["Have I..."],
       [
@@ -306,7 +306,7 @@ export const precepts = [
   },
   {
     title: "Fourth Precept",
-    name: "4: You shall keep holy the Holy days of Obligation.",
+    name: "You shall keep holy the Holy days of Obligation.",
     questions: [
       ["Have I..."],
       [
@@ -316,7 +316,7 @@ export const precepts = [
   },
   {
     title: "Fifth Precept",
-    name: "5: You shall observe the prescribed days of fasting and abstinence.",
+    name: "You shall observe the prescribed days of fasting and abstinence.",
     questions: [
       ["Have I..."],
       [
@@ -336,7 +336,7 @@ export const precepts = [
 
   {
     title: "Sixth Precept",
-    name: "6: You shall contribute to the support of the Church.",
+    name: "You shall contribute to the support of the Church.",
     questions: [
       ["Have I..."],
       [
@@ -347,7 +347,7 @@ export const precepts = [
 
   {
     title: "Seventh Precept",
-    name: "7: You shall observe the laws of the Church concerning marriage.",
+    name: "You shall observe the laws of the Church concerning marriage.",
     questions: [
       ["Have I..."],
       [

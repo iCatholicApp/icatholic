@@ -76,15 +76,16 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   text: {
-    // textAlign: "center",
+    color: colors.neutral700,
     fontSize: 18,
   },
   header: {
-    // textAlign: "center",
+    color: colors.neutral800,
     fontWeight: "bold",
     fontSize: 22,
   },
   examenText: {
+    color: colors.neutral700,
     fontSize: 18,
   },
   examen: {

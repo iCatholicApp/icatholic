@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import {
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  useWindowDimensions,
   ActivityIndicator,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  useWindowDimensions,
 } from "react-native";
 
-import colors from "../theme/colors";
+import RenderHTML from "react-native-render-html";
 import { Accordian, Card } from "../components";
 import { getTodaysMassReadings } from "../helper/massReadings";
-import RenderHTML from "react-native-render-html";
+import colors from "../theme/colors";
 
 export default function MassScreen() {
   const { width } = useWindowDimensions();

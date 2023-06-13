@@ -1,8 +1,8 @@
 import React from "react";
-import { StyleSheet, ScrollView, View, Text } from "react-native";
-import colors from "../../theme/colors";
-import { Accordian, Card } from "../../components";
+import { ScrollView, StyleSheet, Text } from "react-native";
+import { Accordian } from "../../components";
 import { examination, precepts } from "../../constants/examination";
+import colors from "../../theme/colors";
 
 export default function ExamenQuestionScreen({ route, navigation }) {
   return (
@@ -65,6 +65,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 18,
     marginTop: 20,
-    color: colors.neutral700,
+    color: colors.neutral800,
   },
 });

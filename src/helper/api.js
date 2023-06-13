@@ -1,11 +1,8 @@
-// Bible API
-// https://scripture.api.bible/livedocs
-
-// Mass Readings RSS
-// https://universalis.com/canada/n-link.htm
-
 import axios from "axios";
 import Constants from "expo-constants";
+
+// Bible API
+// https://scripture.api.bible/livedocs
 var HTMLParser = require("fast-html-parser");
 
 const BIBLE_API_KEY = Constants.expoConfig.extra.bible_api_key;
@@ -18,8 +15,6 @@ const bibleAPI = axios.create({
 // response interceptor
 bibleAPI.interceptors.response.use(
   function (response) {
-    // Any status code that lie within the range of 2xx cause this function to trigger
-    // Do something with response data
     return response;
   },
   function (error) {
@@ -43,6 +38,8 @@ bibleAPI.interceptors.response.use(
   }
 );
 
+// Mass Readings RSS
+// https://universalis.com/canada/n-link.htm
 const dailyMass = axios.create({
   baseURL: `https://universalis.com/northamerica.Canada/%7B%7D/jsonpmass.js`,
   headers: {
@@ -55,12 +52,11 @@ const dailyMass = axios.create({
 // response interceptor
 dailyMass.interceptors.response.use(
   function (response) {
-    // Any status code that lie within the range of 2xx cause this function to trigger
-
     const dataHTML = response.data.substring(
       "universalisCallback(".length,
       response.data.length - 3
     );
+
     const dataJSON = JSON.parse(dataHTML);
 
     const massReadings = {

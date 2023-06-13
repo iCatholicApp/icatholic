@@ -1,45 +1,62 @@
 import React, { useEffect, useState } from "react";
 import {
-  StyleSheet,
-  useWindowDimensions,
-  SafeAreaView,
-  View,
-  Text,
+  ActivityIndicator,
   ScrollView,
+  StyleSheet,
+  Text,
+  View,
 } from "react-native";
-import RenderHtml from "react-native-render-html";
-
-import { DropDown, RoundButton } from "../components";
-import colors from "../theme/colors";
+import { DropDown } from "../components";
 import { getBooks, getChapters, getPassages } from "../helper/bible";
+import colors from "../theme/colors";
 
 export default function BibleScreen() {
-  const { width } = useWindowDimensions();
-
+  const [loaded, setLoaded] = useState(false);
   const [currentPassage, setCurrentPassage] = useState("<p></p>");
   const [currentBook, setCurrentBook] = useState("MAT");
   const [currentChapter, setCurrentChapter] = useState(1);
   const [allChapters, setAllChapters] = useState([]);
   const [allBooks, setAllBooks] = useState([]);
 
+  const fetchPassage = async () => {
+    setLoaded(false);
+    Promise.all([
+      getBooks(),
+      getChapters(currentBook),
+      getPassages(currentBook, currentChapter),
+    ])
+      .then(function (responses) {
+        return Promise.all(
+          responses.map(function (response) {
+            return response;
+          })
+        );
+      })
+      .then(function (data) {
+        const books = data[0].data.data.map((book) => ({
+          label: book.name,
+          value: book.id,
+        }));
+
+        const chapters = data[1].data.data.map((chapters) => ({
+          label: chapters.number,
+          value: chapters.number,
+        }));
+
+        const passage = data[2];
+
+        setAllBooks(books);
+        setAllChapters(chapters.slice(1));
+        setCurrentPassage(passage);
+        setLoaded(true);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
-    getBooks().then(function (response) {
-      const books = response.data.data.map((book) => ({
-        label: book.name,
-        value: book.id,
-      }));
-      setAllBooks(books);
-    });
-    getChapters(currentBook).then(function (response) {
-      const chapters = response.data.data.map((chapters) => ({
-        label: chapters.number,
-        value: chapters.number,
-      }));
-      setAllChapters(chapters.slice(1));
-    });
-    getPassages(currentBook, currentChapter).then(function (response) {
-      setCurrentPassage(response.data.data.content);
-    });
+    fetchPassage();
   }, [currentBook, currentChapter]);
 
   return (
@@ -59,14 +76,19 @@ export default function BibleScreen() {
           onPress={(chapter) => setCurrentChapter(chapter)}
         />
       </View>
-      <ScrollView style={styles.passage}>
-        {currentPassage && (
-          <View style={{ marginBottom: 15, fontSize: 18 }}>
-            <RenderHtml
-              contentWidth={width}
-              source={{ html: currentPassage }}
-              baseStyle={{ fontSize: 16, color: colors.neutral700 }}
-            />
+      <ScrollView style={styles.passageContainer}>
+        {currentPassage && loaded ? (
+          <Text style={styles.passageText}>
+            {currentPassage.map((passage) => (
+              <Text key={passage.id}>
+                <Text style={styles.verseText}>{passage.id}</Text>
+                <Text style={styles.passageText}> {passage.passage}</Text>
+              </Text>
+            ))}
+          </Text>
+        ) : (
+          <View style={styles.loader}>
+            <ActivityIndicator size="large" color={colors.neutral500} />
           </View>
         )}
       </ScrollView>
@@ -82,10 +104,17 @@ const styles = StyleSheet.create({
   buttonStyle: {
     marginRight: 15,
   },
-  passage: {
+  passageContainer: {
     padding: 15,
-    // marginBottom: 15,
+  },
+  verseText: {
+    fontSize: 12,
+    color: colors.neutral500,
+  },
+  passageText: {
     fontSize: 18,
+    paddingBottom: 30,
+    color: colors.neutral800,
   },
   bibleHeader: {
     padding: 15,
