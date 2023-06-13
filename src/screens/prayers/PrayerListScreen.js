@@ -93,16 +93,20 @@ export default function PrayerListScreen() {
             })}
           </Accordian>
 
-          {/* <Accordian title="Prayers in Mass" style={styles.accordian}>
-            {prayers.map((prayer, i) => (
-              <ListItem
-                key={i}
-                text={prayer.label}
-                onPress={() => navigation.navigate("Prayer", { prayer })}
-              />
-            ))}
+          <Accordian title="Prayers for Mass" style={styles.accordian}>
+            {prayers.map((prayer, i) => {
+              if (prayer.category[0] === "Mass") {
+                return (
+                  <ListItem
+                    key={i}
+                    text={prayer.label}
+                    onPress={() => navigation.navigate("Prayer", { prayer })}
+                  />
+                );
+              }
+            })}
           </Accordian>
-          <Accordian title="Devotional prayers" style={styles.accordian}>
+          {/* <Accordian title="Devotional prayers" style={styles.accordian}>
             {prayers.map((prayer, i) => (
               <ListItem
                 key={i}

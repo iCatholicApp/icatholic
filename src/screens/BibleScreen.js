@@ -65,6 +65,7 @@ export default function BibleScreen() {
             <RenderHtml
               contentWidth={width}
               source={{ html: currentPassage }}
+              baseStyle={{ fontSize: 16, color: colors.neutral700 }}
             />
           </View>
         )}

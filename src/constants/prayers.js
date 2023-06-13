@@ -1,3 +1,9 @@
+/*
+ * @label for displaying name
+ * @value
+ * @category for grouping prayers together
+ * @prayer for the text. use \n to make new line
+ */
 export default [
   {
     label: "Our Father",
@@ -113,16 +119,40 @@ export default [
   },
   {
     label: "Litany of Humility",
-    value: "gloriaPatri",
+    value: "litanyOfHumility",
     category: ["Litany"],
     prayer:
       "O Jesus, meek and humble of heart,\n\nHear me.\n\nFrom the desire of being esteemed,\n\nDeliver me, O Jesus.\n\nFrom the desire of being loved,\n\nDeliver me, O Jesus.\n\nFrom the desire of being extolled,\n\nDeliver me, O Jesus.\n\nFrom the desire of being honored,\n\nDeliver me, O Jesus.\n\nFrom the desire of being praised,\n\nDeliver me, O Jesus.\n\nFrom the desire of being preferred to others,\n\nDeliver me, O Jesus.\n\nFrom the desire of being consulted,\n\nDeliver me, O Jesus.\n\nFrom the desire of being approved,\n\nDeliver me, O Jesus.\n\nFrom the fear of being humiliated,\n\nDeliver me, O Jesus.\n\nFrom the fear of being despised,\n\nDeliver me, O Jesus.\n\nFrom the fear of suffering rebukes,\n\nDeliver me, O Jesus.\n\nFrom the fear of being calumniated,\n\nDeliver me, O Jesus.\n\nFrom the fear of being forgotten,\n\nDeliver me, O Jesus.\n\nFrom the fear of being ridiculed,\n\nDeliver me, O Jesus.\n\nFrom the fear of being wronged,\n\nDeliver me, O Jesus.\n\nFrom the fear of being suspected,\n\nDeliver me, O Jesus.\n\nThat others may be loved more than I,\n\nJesus, grant me the grace to desire it.\n\nThat others may be esteemed more than I,\n\nJesus, grant me the grace to desire it.\n\nThat, in the opinion of the world, others may increase and I may decrease,\n\nJesus, grant me the grace to desire it.\n\nThat others may be chosen and I set aside,\n\nJesus, grant me the grace to desire it.\n\nThat others may be praised and I go unnoticed,\n\nJesus, grant me the grace to desire it.\n\nThat others may be preferred to me in everything,\n\nJesus, grant me the grace to desire it.\n\nThat others may become holier than I, provided that I may become as holy as I should,\n\nJesus, grant me the grace to desire it.",
   },
   {
     label: "Litany of Trust",
-    value: "gloriaPatri",
+    value: "litanyOfTrust",
     category: ["Litany"],
     prayer:
-      "From the belief that I have to earn Your love\n\nDeliver me, Jesus\n\nFrom the fear that I am unlovable\n\nDeliver me, Jesus\n\nFrom the false security that I have what it takes\n\nDeliver me, Jesus\n\nFrom the fear that trusting You will leave me more destitute\n\nDeliver me, Jesus\n\nFrom all suspicion of Your words and promises\n\nDeliver me, Jesus\n\nFrom the rebellion against childlike dependency on You\n\nDeliver me, Jesus\n\nFrom refusals and reluctances in accepting Your will\n\nDeliver me, Jesus\n\nFrom anxiety about the future\n\nDeliver me, Jesus\n\nFrom resentment or excessive preoccupation with the past\n\nDeliver me, Jesus\n\nFrom restless self-seeking in the present moment\n\nDeliver me, Jesus\n\nFrom disbelief in Your love and presence\n\nDeliver me, Jesus\n\nFrom the fear of being asked to give more than I have\n\nDeliver me, Jesus\n\nFrom the belief that my life has no meaning or worth\n\nDeliver me, Jesus\n\nFrom the fear of what love demands\n\nDeliver me, Jesus\n\nFrom discouragement\n\nDeliver me, Jesus\n\nThat You are continually holding me, sustaining me, loving me\n\nJesus, I trust in You\n\nThat Your love goes deeper than my sins and failings and transforms me\n\nJesus, I trust in You\n\nThat not knowing what tomorrow brings is an invitation to lean on You\n\nJesus, I trust in You\n\nThat You are with me in my suffering\n\nJesus, I trust in You\n\nThat my suffering, united to Your own, will bear fruit in this life and the next\n\nJesus, I trust in You\n\nThat You will not leave me orphan\n\nJesus, I trust in You\n\nThat You are present in Your Church\n\nJesus, I trust in You\n\nThat Your plan is better\n\nthan anything else\n\nJesus, I trust in You\n\nThat You always hear me and in\n\nYour goodness always respond to me\n\nJesus, I trust in You\n\nThat You give me the grace to accept\n\nforgiveness and to forgive others\n\nJesus, I trust in You\n\nThat You give me all the strength\n\nI need for what is asked\n\nJesus, I trust in You\n\nThat my life is a gift\n\nJesus, I trust in You\n\nThat You will teach me to trust You",
+      "From the belief that I have to earn Your love\n\nDeliver me, Jesus\n\nFrom the fear that I am unlovable\n\nDeliver me, Jesus\n\nFrom the false security that I have what it takes\n\nDeliver me, Jesus\n\nFrom the fear that trusting You will leave me more destitute\n\nDeliver me, Jesus\n\nFrom all suspicion of Your words and promises\n\nDeliver me, Jesus\n\nFrom the rebellion against childlike dependency on You\n\nDeliver me, Jesus\n\nFrom refusals and reluctances in accepting Your will\n\nDeliver me, Jesus\n\nFrom anxiety about the future\n\nDeliver me, Jesus\n\nFrom resentment or excessive preoccupation with the past\n\nDeliver me, Jesus\n\nFrom restless self-seeking in the present moment\n\nDeliver me, Jesus\n\nFrom disbelief in Your love and presence\n\nDeliver me, Jesus\n\nFrom the fear of being asked to give more than I have\n\nDeliver me, Jesus\n\nFrom the belief that my life has no meaning or worth\n\nDeliver me, Jesus\n\nFrom the fear of what love demands\n\nDeliver me, Jesus\n\nFrom discouragement\n\nDeliver me, Jesus\n\nThat You are continually holding me, sustaining me, loving me\n\nJesus, I trust in You\n\nThat Your love goes deeper than my sins and failings and transforms me\n\nJesus, I trust in You\n\nThat not knowing what tomorrow brings is an invitation to lean on You\n\nJesus, I trust in You\n\nThat You are with me in my suffering\n\nJesus, I trust in You\n\nThat my suffering, united to Your own, will bear fruit in this life and the next\n\nJesus, I trust in You\n\nThat You will not leave me orphan\n\nJesus, I trust in You\n\nThat You are present in Your Church\n\nJesus, I trust in You\n\nThat Your plan is better\n\nthan anything else\n\nJesus, I trust in You\n\nThat You always hear me and in Your goodness always respond to me\n\nJesus, I trust in You\n\nThat You give me the grace to accept\n\nforgiveness and to forgive others\n\nJesus, I trust in You\n\nThat You give me all the strength\n\nI need for what is asked\n\nJesus, I trust in You\n\nThat my life is a gift\n\nJesus, I trust in You\n\nThat You will teach me to trust You.",
+  },
+  {
+    label: "Prayer before Mass",
+    value: "prayerBeforeMass", // could do https://stcharlesnh.org/prayers-before-mass also
+    category: ["Mass"],
+    // https://www.ewtn.com/catholicism/devotions/prayer-before-mass-325
+    prayer:
+      "Almighty and ever-living God, \nI approach the sacrament\nof Your only-begotten Son\nOur Lord Jesus Christ, \nI come sick to the doctor of life, \nunclean to the fountain of mercy, \nblind to the radiance of eternal light, \nand poor and needy to the Lord\nof heaven and earth.\n\nLord, in your great generosity, \nheal my sickness, \nwash away my defilement, \nenlighten my blindness, enrich my poverty, \nand clothe my nakedness. \nMay I receive the bread of angels, \nthe King of kings and Lord of lords, \nwith humble reverence, \nwith the purity and faith, \nthe repentance and love, \nand the determined purpose\nthat will help to bring me to salvation. \nMay I receive the sacrament\nof the Lord's Body and Blood, \nand its reality and power.\n\nKind God, \nmay I receive the Body\nof Your only-begotten Son, \nour Lord Jesus Christ, \nborn from the womb of the Virgin Mary, \nand so be received into His mystical body\nand numbered among His members.\n\nLoving Father, \nas on my earthly pilgrimage\nI now receive Your beloved Son\nunder the veil of a sacrament, \nmay I one day see him face to face in glory, \nwho lives and reigns with You for ever.\n\nAmen.\n\n- Saint Thomas Aquinas",
+  },
+  {
+    label: "Thanksgiving Prayer after Mass",
+    value: "prayerAfterMass",
+    category: ["Mass"],
+    // https://www.ewtn.com/catholicism/devotions/thanksgiving-prayer-after-mass-12766
+    prayer:
+      "I thank you, holy Lord, almighty Father, eternal God, who deigned to feast me, sinful and unworthy servant, with the precious body and blood of your Son, Jesus Christ our Lord, not for any merit of mine, but only because of your merciful goodness. And I pray that this Holy Communion, far from condemning me to punishment, may bring about my pardon and salvation, encompassing me with the armor of faith and the shield of a good will. By it let my vices be done away, all lustful desires extinguished. May it advance me in charity, patience, humility, obedience, and every other virtue. Let it be strong defense against the wiles of all my enemies, visible and invisible, allaying for me every disturbance of flesh and spirit, binding me firmly to you, the one true God, and bringing my last hour to a happy close. I pray, too, that it may be your pleasure to call my sinful self one day to that banquet, wonderful past all telling, where you, with your Son and the Holy Spirit, feast your saints with the vision of yourself, who are true light, the fulfillment of all desires, the joy that knows no ending, gladness unalloyed, and perfect bliss: through the same Christ our Lord.\n\nAmen.\n\n- Saint Thomas Aquinas",
+  },
+  {
+    label: "Spiritual Communion",
+    value: "spiritualCommunion",
+    category: ["Mass"],
+    // https://www.ewtn.com/catholicism/devotions/act-of-spiritual-communion-339
+    prayer:
+      "My Jesus, \nI believe that You are present in the Most Blessed Sacrament. \nI love You above all things, and I desire to receive You into my soul. \nSince I cannot now receive You sacramentally, come at least spiritually into my heart. \nI embrace You as if You were already there, and unite myself wholly to You. \nNever permit me to be separated from You.\n\nAmen.",
   },
 ];
