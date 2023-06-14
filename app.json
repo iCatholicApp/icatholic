@@ -19,7 +19,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.ozdv.icatholic",
-      "buildNumber": "7"
+      "buildNumber": "9"
     },
     "android": {
       "package": "com.ozdv.icatholic",
