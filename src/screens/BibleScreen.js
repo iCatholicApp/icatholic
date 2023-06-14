@@ -12,6 +12,8 @@ import colors from "../theme/colors";
 
 export default function BibleScreen() {
   const [loaded, setLoaded] = useState(false);
+  const [openBooks, setOpenBooks] = useState(false);
+  const [openChapter, setOpenChapter] = useState(false);
   const [currentPassage, setCurrentPassage] = useState("<p></p>");
   const [currentBook, setCurrentBook] = useState("MAT");
   const [currentChapter, setCurrentChapter] = useState(1);
@@ -63,20 +65,48 @@ export default function BibleScreen() {
     <View style={styles.container}>
       <View style={styles.bibleHeader}>
         <DropDown
-          width="43%"
+          width="50%"
           options={allBooks}
           placeholder="Matthew"
-          onPress={(book) => setCurrentBook(book)}
+          value={currentBook}
+          setValue={setCurrentBook}
+          open={openBooks}
+          setOpen={() => {
+            setOpenBooks(!openBooks);
+            setOpenChapter(false);
+          }}
+          onPress={(book) => {
+            setCurrentBook(book);
+            setCurrentChapter(1);
+          }}
           searchable
         />
         <DropDown
-          width="25%"
+          width="20%"
           options={allChapters}
+          value={currentChapter}
+          setValue={setCurrentChapter}
+          open={openChapter}
+          setOpen={() => {
+            setOpenChapter(!openChapter);
+            setOpenBooks(false);
+          }}
           placeholder="1"
-          onPress={(chapter) => setCurrentChapter(chapter)}
+          onPress={(chapter) => {
+            setCurrentChapter(chapter);
+          }}
         />
       </View>
-      <ScrollView style={styles.passageContainer}>
+      <ScrollView
+        style={styles.passageContainer}
+        scrollEventThrottle={5000}
+        onScroll={() => {
+          if (openBooks || openChapter) {
+            setOpenBooks(false);
+            setOpenChapter(false);
+          }
+        }}
+      >
         {currentPassage && loaded ? (
           <Text style={styles.passageText}>
             {currentPassage.map((passage) => (

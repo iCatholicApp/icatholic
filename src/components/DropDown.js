@@ -4,17 +4,23 @@ import DropDownPicker from "react-native-dropdown-picker";
 import colors from "../theme/colors";
 
 export default function DropDown(props) {
-  const { options, onPress, placeholder, width, searchable } = props;
+  const {
+    options,
+    onPress,
+    placeholder,
+    width,
+    searchable,
+    value,
+    setValue,
+    open,
+    setOpen,
+  } = props;
 
-  const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("MAT");
-  const [items, setItems] = useState(options || []);
+  const [items, setItems] = useState(options);
 
   useEffect(() => {
-    if (items.length < 1) {
-      setItems(options);
-    }
-  });
+    setItems(options);
+  }, [options]);
 
   return (
     <DropDownPicker
@@ -64,18 +70,18 @@ export default function DropDown(props) {
         color: colors.neutral900,
       }}
       searchTextInputStyle={{
-        backgroundColor: colors.neutral300,
-        borderColor: colors.neutral500,
-        color: colors.neutral900,
+        backgroundColor: colors.neutral200,
+        borderColor: colors.neutral400,
+        color: colors.neutral800,
       }}
       selectedItemLabelStyle={{
-        color: colors.neutral900,
+        color: colors.neutral100,
       }}
       listItemContainerStyle={{
         height: 30,
       }}
       selectedItemContainerStyle={{
-        backgroundColor: colors.neutral700,
+        backgroundColor: colors.primary,
       }}
     />
   );
