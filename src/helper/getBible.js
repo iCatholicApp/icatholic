@@ -1,4 +1,3 @@
-import { key } from "fontawesome";
 import { bibleAPI } from "./api";
 
 var HTMLParser = require("fast-html-parser");

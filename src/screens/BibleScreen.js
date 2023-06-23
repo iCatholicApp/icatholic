@@ -7,7 +7,7 @@ import {
   View,
 } from "react-native";
 import { DropDown } from "../components";
-import { getBooks, getChapters, getPassages } from "../helper/bible";
+import { getBooks, getChapters, getPassages } from "../helper/getBible";
 import colors from "../theme/colors";
 
 export default function BibleScreen() {

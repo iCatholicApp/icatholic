@@ -41,7 +41,7 @@ bibleAPI.interceptors.response.use(
 // Mass Readings RSS
 // https://universalis.com/canada/n-link.htm
 const dailyMass = axios.create({
-  baseURL: `https://universalis.com/northamerica.Canada/%7B%7D/jsonpmass.js`,
+  baseURL: `https://universalis.com/northamerica.Canada`,
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",

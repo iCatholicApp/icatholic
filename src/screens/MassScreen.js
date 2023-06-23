@@ -9,28 +9,78 @@ import {
 } from "react-native";
 
 import RenderHTML from "react-native-render-html";
-import { Accordian, Card } from "../components";
-import { getTodaysMassReadings } from "../helper/massReadings";
+import { Accordian, Card, IconButton } from "../components";
+import { getTodaysMassReadings } from "../helper/getMassReadings";
 import colors from "../theme/colors";
+import { TouchableOpacity } from "react-native-web";
 
 export default function MassScreen() {
   const { width } = useWindowDimensions();
+
   const [readings, setReadings] = useState({});
   const [loaded, setLoaded] = useState(false);
+  const [selectedDay, setSelectedDay] = useState(new Date());
+
+  const dateFormatter = (date) => {
+    console.log("date", date);
+    const currentDate = date ? date : new Date();
+    console.log("currentDate", currentDate);
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+    const day = String(currentDate.getDate()).padStart(2, "0");
+    const formattedDate = `${year}${month}${day}`;
+
+    return formattedDate;
+  };
+
+  const incrementDateByOneDay = (date) => {
+    const newDate = new Date(date);
+    newDate.setDate(newDate.getDate() + 1);
+
+    setSelectedDay(newDate);
+    return newDate;
+  };
+
+  const decrementDateByOneDay = (date) => {
+    const newDate = new Date(date);
+    newDate.setDate(newDate.getDate() - 1);
+
+    setSelectedDay(newDate);
+    return newDate;
+  };
 
   useEffect(() => {
-    getTodaysMassReadings().then((response) => {
+    setLoaded(false);
+    const date = dateFormatter(selectedDay);
+
+    getTodaysMassReadings(date).then((response) => {
       setReadings(response);
       setLoaded(true);
     });
-  }, []);
+  }, [selectedDay]);
 
   return (
     <ScrollView style={styles.container}>
       {loaded ? (
         <View>
-          <Card style={styles.card}>
+          <Card style={styles.headerCard}>
+            <IconButton
+              type="ion"
+              name="chevron-back"
+              size={26}
+              color={colors.primary}
+              onPress={() => decrementDateByOneDay(selectedDay)}
+            />
+            {/* <TouchableOpacity onPress={() => setSelectedDay(new Date())}> */}
             <Text style={styles.heading}>{readings.day}</Text>
+            {/* </TouchableOpacity> */}
+            <IconButton
+              type="ion"
+              name="chevron-forward"
+              size={26}
+              color={colors.primary}
+              onPress={() => incrementDateByOneDay(selectedDay)}
+            />
           </Card>
           <Accordian title="First Reading" style={styles.card}>
             <Text style={styles.source}>{readings.r1.source}</Text>
@@ -121,6 +171,14 @@ const styles = StyleSheet.create({
     backgroundColor: colors.neutral200,
     paddingHorizontal: 15,
   },
+  headerCard: {
+    marginTop: 15,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: 15,
+    flex: 1,
+    alignItems: "center",
+  },
   card: {
     marginTop: 15,
   },
@@ -134,7 +192,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
     color: colors.neutral900,
-    fontSize: 20,
+    fontSize: 18,
+    paddingHorizontal: 10,
+    flexShrink: 1,
   },
   divider: {
     borderBottomWidth: 1,
