@@ -20,6 +20,7 @@
     "@romcal/calendar.canada": "^3.0.0-dev.31",
     "axios": "^1.2.4",
     "dotenv": "^16.0.3",
+    "eslint": "^8.44.0",
     "expo": "^47.0.13",
     "expo-dev-client": "~2.0.1",
     "expo-device": "~5.0.0",

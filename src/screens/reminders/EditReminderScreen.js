@@ -1,11 +1,11 @@
-import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { StyleSheet, ScrollView, Text, View } from "react-native";
+import * as Notifications from "expo-notifications";
+import React, { useState } from "react";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { Button, Card, SelectInput } from "../../components";
 import prayers from "../../constants/prayers";
-import { frequency, Time } from "../../constants/reminders";
+import { Time, frequency } from "../../constants/reminders";
 import colors from "../../theme/colors";
-import * as Notifications from "expo-notifications";
 
 // todo set up edit and save on changes
 
