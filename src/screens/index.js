@@ -22,6 +22,13 @@ import ExamenQuestionScreen from "./examen/ExamenQuestionScreen";
 import PrayerScreen from "./prayers/PrayerScreen";
 import PrayerListScreen from "./prayers/PrayerListScreen";
 
+// Authentication
+import ConfirmEmailScreen from "./authScreens/ConfirmEmailScreen";
+import ForgotPasswordScreen from "./authScreens/ForgotPasswordScreen";
+import NewPasswordScreen from "./authScreens/NewPasswordScreen";
+import SignInScreen from "./authScreens/SignInScreen";
+import SignUpScreen from "./authScreens/SignUpScreen";
+
 export {
   AboutScreen,
   BibleScreen,
@@ -37,4 +44,9 @@ export {
   PrayerScreen,
   PrayerListScreen,
   ProfileScreen,
+  ConfirmEmailScreen,
+  ForgotPasswordScreen,
+  NewPasswordScreen,
+  SignInScreen,
+  SignUpScreen,
 };

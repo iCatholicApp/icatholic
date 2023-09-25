@@ -16,7 +16,7 @@ import TabNavigator from "./TabNavigator";
 
 const prefix = Linking.createURL("/");
 
-export default function AppNavigator() {
+export default Navigation = () => {
   const scheme = useColorScheme();
 
   const MyTheme = {
@@ -72,8 +72,11 @@ export default function AppNavigator() {
       Notifications.removeNotificationSubscription(responseListener.current);
     };
   }, []);
+
   return (
     <Fragment>
+      {/* TOdo: see why i have two safeare views here; is it to match the bg colour or something? */}
+      {/* todo: maybe we can export this safe area view stuff to App.js instead of navigation  */}
       <SafeAreaView style={{ flex: 0, backgroundColor: colors.neutral200 }} />
       <SafeAreaView style={{ flex: 1, backgroundColor: colors.neutral100 }}>
         <NavigationContainer
@@ -86,7 +89,7 @@ export default function AppNavigator() {
       </SafeAreaView>
     </Fragment>
   );
-}
+};
 
 async function registerForPushNotificationsAsync() {
   let token;
