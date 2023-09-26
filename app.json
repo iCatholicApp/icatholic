@@ -19,11 +19,11 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.ozdv.icatholic",
-      "buildNumber": "9"
+      "buildNumber": "10"
     },
     "android": {
       "package": "com.ozdv.icatholic",
-      "versionCode": 2,
+      "versionCode": 3,
       "adaptiveIcon": {
         // "foregroundImage": "", not sure what this is
         "backgroundColor": "#FFFFFF"
