@@ -14,6 +14,8 @@ import colors from "../../theme/colors";
 export default function ReminderScreen({ route }) {
   const navigation = useNavigation();
   const [reminders, setReminders] = useState([]);
+  const [reminderToDelete, setReminderToDelete] = useState();
+  const [openDelete, setOpenDelete] = useState(false);
   const [removeReminder, setRemoveReminder] = useState(false);
 
   useEffect(() => {
@@ -32,11 +34,12 @@ export default function ReminderScreen({ route }) {
       .catch((error) => console.log("error with notify!", "\n", error));
   }, [reminders, removeReminder, route]);
 
-  const handleDelete = async (reminder) => {
+  const handleDelete = async () => {
     setRemoveReminder(true);
-    await Notifications.cancelScheduledNotificationAsync(reminder.id);
+    await Notifications.cancelScheduledNotificationAsync(reminderToDelete.id);
     setRemoveReminder(false);
   };
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Card style={{ width: "100%", marginVertical: 15 }}>
@@ -48,25 +51,79 @@ export default function ReminderScreen({ route }) {
 
       {reminders.length > 0 &&
         reminders.map((reminder, i) => (
-          <TouchableOpacity
-            key={`${reminder.prayer}-${i}`}
-            style={[styles.reminderItemStyles]}
-            onPress={() => handleDelete(reminder)}
-            activeOpacity={0.6}
-          >
-            <View style={styles.buttonBodyStyle}>
-              <Icon
-                style={{ paddingRight: 10 }}
-                type="fa5"
-                name="clock"
-                size={20}
-                color={colors.neutral700}
-              />
-              <Text numberOfLines={1} style={styles.labelStyles}>
-                {reminder.body}
-              </Text>
-            </View>
-          </TouchableOpacity>
+          <>
+            <TouchableOpacity
+              key={`${reminder.prayer}-${i}`}
+              style={[styles.reminderItemStyles]}
+              onPress={() => {
+                setOpenDelete(true);
+                setReminderToDelete(reminder);
+              }}
+              activeOpacity={0.6}
+            >
+              <View style={styles.buttonBodyStyle}>
+                <View
+                  style={[
+                    {
+                      flexDirection: "row",
+                      alignItems: "flex-start",
+                      width: "100%",
+                    },
+                  ]}
+                >
+                  <Icon
+                    style={{ paddingRight: 10 }}
+                    type="fa5"
+                    name="clock"
+                    size={20}
+                    color={colors.neutral700}
+                  />
+                  <Text numberOfLines={1} style={styles.labelStyles}>
+                    {reminder.body}
+                  </Text>
+                </View>
+                {openDelete && reminderToDelete === reminder && (
+                  <View style={{ flexDirection: "row", paddingTop: 5 }}>
+                    <Text
+                      numberOfLines={1}
+                      style={{
+                        color: colors.red,
+                        paddingRight: 10,
+                        fontSize: 24,
+                        fontWeight: "600",
+                      }}
+                    >
+                      Delete?
+                    </Text>
+                    <TouchableOpacity onPress={() => handleDelete()}>
+                      <Text
+                        style={{
+                          fontSize: 24,
+                          color: colors.neutral700,
+                          fontWeight: "600",
+                          paddingRight: 10,
+                        }}
+                      >
+                        Yes
+                      </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => setReminderToDelete()}>
+                      <Text
+                        style={{
+                          fontSize: 24,
+                          color: colors.neutral700,
+                          fontWeight: "600",
+                          paddingRight: 10,
+                        }}
+                      >
+                        No
+                      </Text>
+                    </TouchableOpacity>
+                  </View>
+                )}
+              </View>
+            </TouchableOpacity>
+          </>
         ))}
 
       <IconButton
@@ -96,7 +153,7 @@ const styles = StyleSheet.create({
   buttonBodyStyle: {
     flex: 1,
     width: "100%",
-    flexDirection: "row",
+    flexDirection: "column",
     alignItems: "center",
   },
   reminderItemStyles: {
