@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, ScrollView, Text, View } from "react-native";
+import {
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+  Text,
+  View,
+} from "react-native";
 import * as Notifications from "expo-notifications";
 import { useNavigation } from "@react-navigation/native";
-import { Card, Icon, IconButton, WideButton } from "../../components";
+import { Card, Icon, IconButton } from "../../components";
 import colors from "../../theme/colors";
 
-export default function ReminderScreen() {
+export default function ReminderScreen({ route }) {
   const navigation = useNavigation();
   const [reminders, setReminders] = useState([]);
+  const [removeReminder, setRemoveReminder] = useState(false);
 
   useEffect(() => {
     Notifications.getAllScheduledNotificationsAsync()
@@ -16,48 +23,52 @@ export default function ReminderScreen() {
           id: e.identifier,
           title: e.content.title,
           body: e.content.body,
-          // data: e.content.data,
+          data: e.content.data,
           frequency: e.trigger,
         }));
         return notificationList;
       })
-      .then((idk) => setReminders(idk))
+      .then((idk) => idk.length !== reminders.length && setReminders(idk))
       .catch((error) => console.log("error with notify!", "\n", error));
-  }, [reminders]);
+  }, [reminders, removeReminder, route]);
 
+  const handleDelete = async (reminder) => {
+    setRemoveReminder(true);
+    await Notifications.cancelScheduledNotificationAsync(reminder.id);
+    setRemoveReminder(false);
+  };
   return (
     <ScrollView contentContainerStyle={styles.container}>
+      <Card style={{ width: "100%", marginVertical: 15 }}>
+        <Text style={{ fontSize: 18 }}>
+          Create daily or weekly reminders to pray or do an examen to help build
+          a better prayer life.
+        </Text>
+      </Card>
+
       {reminders.length > 0 &&
         reminders.map((reminder, i) => (
-          <WideButton
+          <TouchableOpacity
             key={`${reminder.prayer}-${i}`}
-            buttonStyle={{ width: "100%", marginBottom: 15 }}
-            body={
-              <View style={styles.buttonBodyStyle}>
-                <Icon
-                  style={{ paddingRight: 10 }}
-                  type="fa5"
-                  name="clock"
-                  size={20}
-                  color={colors.neutral700}
-                />
-                <Text numberOfLines={1} style={styles.labelStyles}>
-                  {reminder.body}
-                </Text>
-              </View>
-            }
-            bodyStyle={styles.buttonBodyStyle1}
-            onPress={() => navigation.navigate("Edit Reminder", { reminder })}
-          />
+            style={[styles.reminderItemStyles]}
+            onPress={() => handleDelete(reminder)}
+            activeOpacity={0.6}
+          >
+            <View style={styles.buttonBodyStyle}>
+              <Icon
+                style={{ paddingRight: 10 }}
+                type="fa5"
+                name="clock"
+                size={20}
+                color={colors.neutral700}
+              />
+              <Text numberOfLines={1} style={styles.labelStyles}>
+                {reminder.body}
+              </Text>
+            </View>
+          </TouchableOpacity>
         ))}
-      {reminders.length === 0 && (
-        <Card style={{ width: "100%", marginVertical: 15 }}>
-          <Text style={{ fontSize: 18 }}>
-            Create daily or weekly reminders to pray or do an examen to help
-            build a better prayer life.
-          </Text>
-        </Card>
-      )}
+
       <IconButton
         type="ion"
         name="add-sharp"
@@ -67,7 +78,9 @@ export default function ReminderScreen() {
         labelStyles={styles.buttonLabelStyles}
         label="Add Reminder"
         buttonStyle={styles.createButtonStyle}
-        onPress={() => navigation.navigate("Create Reminder")}
+        onPress={() => {
+          navigation.navigate("Create Reminder");
+        }}
       />
     </ScrollView>
   );
@@ -85,6 +98,16 @@ const styles = StyleSheet.create({
     width: "100%",
     flexDirection: "row",
     alignItems: "center",
+  },
+  reminderItemStyles: {
+    width: "100%",
+    marginBottom: 15,
+    backgroundColor: colors.neutral100,
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 15,
+    borderRadius: 10,
   },
   labelStyles: {
     fontSize: 20,

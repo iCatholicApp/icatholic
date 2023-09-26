@@ -6,7 +6,7 @@ import prayers from "../../constants/prayers";
 import colors from "../../theme/colors";
 import * as Notifications from "expo-notifications";
 
-export default function CreateReminderScreen() {
+export default function CreateReminderScreen({ route }) {
   const navigation = useNavigation();
 
   const [time, setTime] = useState(new Date());
@@ -31,7 +31,7 @@ export default function CreateReminderScreen() {
           hour: "numeric",
           minute: "numeric",
         })}`,
-        // data: { data: "goes here" },
+        data: { prayer: prayer, time: time },
         sound: "notification.wav",
       },
       trigger: {
@@ -40,7 +40,8 @@ export default function CreateReminderScreen() {
         repeats: true,
       },
     });
-    navigation.navigate("Reminders");
+    // route.params.setAddedReminder(false);
+    navigation.navigate("Reminders", { prayer: prayer.label });
   }
 
   return (
@@ -81,7 +82,7 @@ export default function CreateReminderScreen() {
               fontSize: "18",
               color: colors.red,
             }}
-            onPress={() => navigation.navigate("Reminders")}
+            onPress={() => navigation.navigate("Reminders", { reminder })}
           />
           <Button
             textStyle={{ fontWeight: "bold" }}

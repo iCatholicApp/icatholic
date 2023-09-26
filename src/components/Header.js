@@ -23,7 +23,9 @@ export default function Header({ props }) {
             color={colors.primary}
           />
         )}
-        <Text style={styles.title}>{title}</Text>
+        <Text style={[styles.title, { marginLeft: back ? -29 : 0 }]}>
+          {title}
+        </Text>
         <View>
           {/* {true && (
                         <IconButton

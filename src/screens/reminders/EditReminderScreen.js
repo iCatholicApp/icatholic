@@ -52,7 +52,7 @@ export default function EditReminderScreen({ route }) {
             <SelectInput
               options={prayerList}
               placeholder="Select what to pray"
-              value={prayer1}
+              value={prayer}
               onPress={(selected) => setPrayer(selected)}
               // searchable
             />
