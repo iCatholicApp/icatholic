@@ -2,7 +2,7 @@
   "expo": {
     "name": "iCatholic",
     "slug": "iCatholic",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -19,7 +19,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.ozdv.icatholic",
-      "buildNumber": "10"
+      "buildNumber": "11"
     },
     "android": {
       "package": "com.ozdv.icatholic",
