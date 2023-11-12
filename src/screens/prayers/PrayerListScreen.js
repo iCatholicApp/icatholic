@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, ScrollView, TextInput, View } from "react-native";
+import { StyleSheet, ScrollView, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Accordian, WideButton } from "../../components";
 import colors from "../../theme/colors";
@@ -130,6 +130,12 @@ export default function PrayerListScreen() {
           </Accordian>
         </>
       )}
+      <WideButton
+        buttonStyle={styles.buttonStyle}
+        textStyle={{ fontSize: 24 }}
+        text="Pray the Holy Rosary"
+        onPress={() => navigation.navigate("Rosary")}
+      />
     </ScrollView>
   );
 }

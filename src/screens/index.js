@@ -21,6 +21,7 @@ import ExamenQuestionScreen from "./examen/ExamenQuestionScreen";
 // Prayer
 import PrayerScreen from "./prayers/PrayerScreen";
 import PrayerListScreen from "./prayers/PrayerListScreen";
+import RosaryScreen from "./prayers/RosaryScreen";
 
 // Authentication
 import ConfirmEmailScreen from "./authScreens/ConfirmEmailScreen";
@@ -42,6 +43,7 @@ export {
   MoreScreen,
   ReminderScreen,
   PrayerScreen,
+  RosaryScreen,
   PrayerListScreen,
   ProfileScreen,
   ConfirmEmailScreen,

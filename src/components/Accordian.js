@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   titleTextStyle: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: "bold",
     color: colors.neutral900,
   },

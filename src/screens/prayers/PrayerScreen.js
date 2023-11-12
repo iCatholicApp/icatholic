@@ -5,11 +5,13 @@ import { Card } from "../../components";
 import colors from "../../theme/colors";
 
 export default function PrayerScreen({ route }) {
+  const prayer = route.params.prayer;
+
   return (
     <ScrollView style={styles.container}>
       <Card style={{ marginBottom: 30 }}>
-        <Text style={styles.prayerHeader}>{route.params.prayer.label}</Text>
-        <Text style={styles.prayerBody}>{route.params.prayer.prayer}</Text>
+        <Text style={styles.prayerHeader}>{prayer.label}</Text>
+        <Text style={styles.prayerBody}>{prayer.prayer}</Text>
       </Card>
     </ScrollView>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { PrayerListScreen, PrayerScreen } from "../screens";
+import { PrayerListScreen, RosaryScreen, PrayerScreen } from "../screens";
 import { Header } from "../components";
 
 export default function ExamenNavigator() {
@@ -18,6 +18,11 @@ export default function ExamenNavigator() {
         component={PrayerListScreen}
       />
       <PrayerStack.Screen name="Prayer" component={PrayerScreen} />
+      <PrayerStack.Screen
+        name="Rosary"
+        options={{ title: "Holy Rosary" }}
+        component={RosaryScreen}
+      />
     </PrayerStack.Navigator>
   );
 }

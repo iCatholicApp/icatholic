@@ -23,8 +23,8 @@ export default function WideButton(props) {
           <Text
             numberOfLines={1}
             style={[
-              textStyle,
               disabled ? styles.disabledButtonText : styles.buttonText,
+              textStyle,
             ]}
           >
             {text}
